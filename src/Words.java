@@ -1,8 +1,4 @@
-public class Wörter {
-
-   // Beginn wort Hangman?!
-           // "Hangman"
-
+public class Words {
     String[] hangmanWords = {
             "Hangman",
             "Abend",
@@ -1526,6 +1522,6 @@ public class Wörter {
             "Zwischenraum",
             "Zyklus",
             "Zylinder"
-    }
 
-}
+
+    }; }
