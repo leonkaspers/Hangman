@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="">
       <changelist_data name="Leon Kaspers" email="" />
-      <change afterPath="$PROJECT_DIR$/src/ListPlayerGuesses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RandomWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ResultDraw.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StickFigureDrawing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Words.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,7 @@
   "keyToString": {
     "Application.RandomWord.executor": "Run",
     "Application.RandomWordPrinter.executor": "Run",
+    "Application.StickFigureDrawing.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
