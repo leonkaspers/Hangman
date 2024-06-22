@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Words {
     String[] hangmanWords = {
             "Hangman",
@@ -1524,4 +1526,9 @@ public class Words {
             "Zylinder"
 
 
-    }; }
+    }; public String getRandomWord() {
+        Random random = new Random();
+        int index = random.nextInt(hangmanWords.length);
+        return hangmanWords[index];
+    }
+}
