@@ -1,33 +1,49 @@
-import javax.swing.*;
+ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class StickFigureDrawing extends JFrame {
     private int step = 0;   //für step counter umd nach fehlern zu malen
+    private final JButton restartButton; /////////////////////////////////////////////////
     public int getStep() {     //für die Anzahl der Steps um diesen, falls falsch, zu erhöhen
-        return step;
+        return this.step;
     }
     public StickFigureDrawing() //fenster specs + button
-     {
-        setTitle("Hanman");    //game fenster Titel
+    {
+        setTitle("Hangman");    //game fenster Titel
         setSize(1600, 900);   //Fester Größe
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //nur übergangsweise bis initialisiert das bei False count +1
         DrawPanel drawPanel = new DrawPanel();
         JButton nextButton = new JButton("Falsch Geraten");
+        restartButton = new JButton("Neues Spiel");
+        restartButton.setVisible(false); ///////////////////////////////////////////
 
         nextButton.addActionListener(new ActionListener() {
+                                         @Override
+                                         public void actionPerformed(ActionEvent e) {
+                                             step++;
+                                             if (step==11) {
+                                                 restartButton.setVisible(true); /////////////////
+                                             }
+                                             drawPanel.repaint();
+                                         }
+                                     }
+        );
+        restartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                step++;
+                step = 0;
+                restartButton.setVisible(false);
+                drawPanel.setBackground(Color.WHITE); // Hintergrundfarbe zurücksetzen
                 drawPanel.repaint();
             }
-        }
-        );
+        });
         add(drawPanel, BorderLayout.CENTER);
         add(nextButton, BorderLayout.SOUTH);
+        add(restartButton, BorderLayout.NORTH);  ///////////////////////
     }
     class DrawPanel extends JPanel //was im Fenster ist
     {
@@ -38,13 +54,20 @@ public class StickFigureDrawing extends JFrame {
             drawPost(g);
             drawStickFigure(g);
         }
+
 //koordinaten wie Folgt, x für die stelle auf der x Achse des Fensters in dem fall von 0-1599.
 // y für die höhe 0-899 und malt von x1 bis x2 bei y1 bis y2 von oben nach unten
 
-        private void drawHill(Graphics g) //bild für den Hügel
+        private void drawHill(Graphics g) //bild für den Hügel + Bsp. Leere Striche für wort eingabe
         {
             g.setColor(new Color(34, 139, 34));
             g.fillArc(1000, 700, 400, 700, 5, 180); // Shifted to the right bottom
+
+            if(step<=10){
+                //Bsp. Leere Striche für wort eingabe
+                g.drawLine (480, 350, 500,350);
+                g.drawLine (505, 350, 525,350);
+                g.drawLine (530, 350, 550,350);}
         }
 
         private void drawPost(Graphics g) //Pfosten merkmale +game Over screen
@@ -53,8 +76,7 @@ public class StickFigureDrawing extends JFrame {
             g2.setColor(new Color(139, 69, 19)); // Brown
             g2.setStroke(new BasicStroke(5)); // 5 pixel dicke Pfosten
 
-
-            // durchgehen des Galgens stück für stück    // >= nicht == sonst wird überschrieben
+            // durchgehen des Galgens stück für stück // >= nicht == sonst wird überschrieben
             if (step >= 1) {
                 g2.drawLine(1200, 700, 1200, 300);
             }
@@ -70,6 +92,7 @@ public class StickFigureDrawing extends JFrame {
                 g2.setStroke(new BasicStroke(2));
                 g2.drawLine(1400, 300, 1400, 350);
             }
+
         }
 
         //Strichmännchen malen
@@ -105,9 +128,9 @@ public class StickFigureDrawing extends JFrame {
                 g.setFont(new Font("SansSerif", Font.BOLD, 30));
                 g.drawString("Better luck next time...", 600, 500);
                 g.setColor(Color.WHITE);
-                    g.fillOval(1385, 365, 5, 5);
-                    g.fillOval(1410, 365, 5, 5);
-                    g.drawArc(1385, 375, 30, 20, 0, 180);
+                g.fillOval(1385, 365, 5, 5);
+                g.fillOval(1410, 365, 5, 5);
+                g.drawArc(1385, 375, 30, 20, 0, 180);
 
 // galgenmännchen nochmal in farbe als overlay das sichtbar da schwarz
                 g.setColor(Color.WHITE);
@@ -116,7 +139,7 @@ public class StickFigureDrawing extends JFrame {
                 g.drawLine(1400, 340, 1400, 350);
                 g.drawLine(1410, 340, 1400, 350);
 
-            //Galgenmenchen
+                //Galgenmenchen
                 g.drawOval(1375, 350, 50, 50);
                 g.drawLine(1400, 400, 1400, 500);
                 g.drawLine(1400, 420, 1350, 480);
@@ -125,8 +148,6 @@ public class StickFigureDrawing extends JFrame {
                 g.drawLine(1400, 500, 1450, 600);
 
             }
-
-
 
         }
 
@@ -140,4 +161,5 @@ public class StickFigureDrawing extends JFrame {
             }
         });
     }
+    
 }
