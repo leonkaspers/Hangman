@@ -9,12 +9,15 @@ public class Game {
 
     private char[] currentLetters;
 
+    private String currentLettersOutputString;
+
     // Konstruktor für Random Word
     public Game() {
         this.state = 1;
         this.word = Words.getRandomWord();
         this.wordLetters = this.word.toCharArray();
         this.currentLetters = new char[this.word.length()];
+        this.currentLettersOutputString = generateNewOutputString();
     }
 
     // Konstruktor für benutzerdefiniertes Word
@@ -36,8 +39,28 @@ public class Game {
 
     }
 
-    private void tryLetter(char c) {
 
+    //Letter Code
+
+    private void tryLetter(char c) {
+        for (int i = 0; i < this.wordLetters.length; i++) {
+            if (c == this.wordLetters[i]) {
+                correctLetter(c);
+            }
+        }
+
+        wrongLetter;
+    }
+
+    //updates currenLetters Array
+    private void correctLetter(char c) {
+        for (int i = 0; i < this.wordLetters.length; i++) {
+            if (c == this.wordLetters[i]) {
+                this.currentLetters[i] = c;
+            }
+        }
+
+        generateNewOutputString
     }
 
 }
