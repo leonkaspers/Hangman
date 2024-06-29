@@ -1,7 +1,11 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 
 // Gui für wort raten mit rückgabe von false oder variabler + 1 sonst draw im besten fall in eine sich erneuernde Zeile
@@ -10,6 +14,7 @@ public class NewGui extends JFrame implements ActionListener {
 
     JPanel panel;
     JLabel label;
+    JLabel usedLetter;
     JTextField textfield;
     JTextArea output;
     JButton input;
@@ -19,7 +24,7 @@ public class NewGui extends JFrame implements ActionListener {
 
     Game game;
 
-    public NewGui() {
+    public NewGui() throws IOException {
 
         //Creating the Frame
         JFrame frame = new JFrame("Hangman");
@@ -29,6 +34,7 @@ public class NewGui extends JFrame implements ActionListener {
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
+        usedLetter = new JLabel("Benutze Buchstaben:");
         textfield = new JTextField(15); // accepts upto 10 characters
         input = new JButton("Eingabe");
         reset = new JButton("Reset");   // Als Resetbutton
@@ -45,6 +51,7 @@ public class NewGui extends JFrame implements ActionListener {
         output = new JTextArea();
         output.setEditable(false);
 
+
         //Adding Components to the frame.
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.CENTER, output);
@@ -55,7 +62,7 @@ public class NewGui extends JFrame implements ActionListener {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         NewGui gui = new NewGui();
         gui.setVisible(true);
     }
@@ -87,6 +94,9 @@ public class NewGui extends JFrame implements ActionListener {
     }
 
     private void updateGUI() {
+        if (!(game.getUsedLetters() == null)) {
+            usedLetter.setText(game.getUsedLetters().toString());
+        }
         switch (this.state) {
             case 0: {
                 output.append("Bitte Wort eingeben, leer lassen für random word");
