@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
+
+    // Gui für wort raten mit rückgabe von false oder variabler + 1 sonst draw im besten fall in eine sich erneuernde Zeile
+
 public class NewGui {
 
     public NewGui(){
