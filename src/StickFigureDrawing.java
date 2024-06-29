@@ -35,19 +35,18 @@ public class StickFigureDrawing extends JFrame {
         nextButton.addActionListener(new ActionListener() {
                                          @Override
                                          public void actionPerformed(ActionEvent e) {
-                                             String input = letterInputField.getText();
-                                             game.tryInput(input); // Verwenden der tryInput-Methode der Game-Klasse
-
-                                             step = game.getState(); // Aktualisieren des step-Werts basierend auf dem Zustand des Spiels
-
+                                             step++;
                                              if (step == 12 || step == 13) {
                                                  restartButton.setVisible(true);
                                              }
-
                                              drawPanel.repaint();
+                                             // if (step>=1)
+                                             // {nextButton.setVisible(false);}
+                                             //zum durchtesten:
                                              if (step >= 0) {
                                                  nextButton.setVisible(true);
                                              }
+
                                          }
                                      }
         );
@@ -61,7 +60,7 @@ public class StickFigureDrawing extends JFrame {
             }
         });
 
-//////////Set layout (cg)
+
         setLayout(new BorderLayout());
 
         // Panel für Eingabe und Buttons erstellen
