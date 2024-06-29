@@ -1,14 +1,34 @@
 
+letterInputField = new JTextField(10);
+    JButton checkLetterButton = new JButton("");
+       ActionListener checkLetterAction = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
 
+    feedbackArea = new JTextArea();
+    feedbackArea.setEditable(false);
 
+    checkLetterButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String input = letterInputField.getText();
+            if (input.length() == 1) {
+                char letter = input.charAt(0);
+                checkLetter(letter);
+            } else {
+                JOptionPane.showMessageDialog(null, "Please enter a single letter.");
+            }
+            letterInputField.setText("");
+        }
+    });
 
-random word
+    JPanel inputPanel = new JPanel();
+    inputPanel.add(new JLabel("Enter a letter:"));
+    inputPanel.add(letterInputField);
+    inputPanel.add(checkLetterButton);
 
-
-
-
-
-
+    add(inputPanel, BorderLayout.NORTH);
+    add(new JScrollPane(feedbackArea), BorderLayout.CENTER);
 
 
 
