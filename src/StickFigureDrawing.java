@@ -59,7 +59,7 @@ public class StickFigureDrawing extends JFrame {
             }
         });
 
-
+//////////Set layout (cg)
         setLayout(new BorderLayout());
 
         // Panel für Eingabe und Buttons erstellen
