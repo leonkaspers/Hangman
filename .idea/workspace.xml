@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="&quot;Finnished Game Methods&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StickFigureDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StickFigureDrawing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,7 @@
   "keyToString": {
     "Application.GameTest.executor": "Run",
     "Application.HangmanGame.executor": "Run",
+    "Application.NewGui.executor": "Run",
     "Application.RandomWord.executor": "Run",
     "Application.RandomWordPrinter.executor": "Run",
     "Application.StickFigureDrawing.executor": "Run",
@@ -51,7 +53,7 @@
     "Application.gameStarten.executor": "Run",
     "Application.temp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "game",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/DasIstMeinGedudel/IdeaProjects/Hangman",
     "node.js.detected.package.eslint": "true",
@@ -63,6 +65,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="NewGui" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NewGui" />
+      <module name="Hangman" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

@@ -114,7 +114,7 @@ public class Game {
     //updates GUI if letter incorrect
     private void wrongInput() {
         this.state = state + 1;
-        if (state == 12) {
+        if (state == 11) {
             gameOver();
         }
 
@@ -122,7 +122,7 @@ public class Game {
     }
 
     private void win() {
-        this.state = 13;
+        this.state = 12;
         this.currentLetters = this.wordLetters;
         generateNewOutputString();
     }
