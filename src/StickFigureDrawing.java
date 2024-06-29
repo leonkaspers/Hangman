@@ -36,7 +36,6 @@ public class StickFigureDrawing extends JFrame {
             super.paintComponent(g);
             drawHill(g);
             drawPost(g);
-            drawStickFigure(g);
         }
 //koordinaten wie Folgt, x für die stelle auf der x Achse des Fensters in dem fall von 0-1599.
 // y für die höhe 0-899 und malt von x1 bis x2 bei y1 bis y2 von oben nach unten
@@ -70,10 +69,7 @@ public class StickFigureDrawing extends JFrame {
                 g2.setStroke(new BasicStroke(2));
                 g2.drawLine(1400, 300, 1400, 350);
             }
-        }
 
-        //Strichmännchen malen
-        private void drawStickFigure(Graphics g) {
             if (step >= 5) {
                 g.drawOval(1375, 350, 50, 50);
 
