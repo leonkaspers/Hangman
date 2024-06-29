@@ -1,4 +1,4 @@
- import javax.swing.*;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +8,9 @@ public class StickFigureDrawing extends JFrame {
     private final JButton restartButton; /////////////////////////////////////////////////
     public int getStep() {     //für die Anzahl der Steps um diesen, falls falsch, zu erhöhen
         return this.step;
+
     }
+
     public StickFigureDrawing() //fenster specs + button
     {
         setTitle("Hangman");    //game fenster Titel
@@ -153,13 +155,5 @@ public class StickFigureDrawing extends JFrame {
 
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new StickFigureDrawing().setVisible(true);
-            }
-        });
-    }
-    
+
 }

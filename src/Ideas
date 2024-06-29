@@ -1,0 +1,62 @@
+
+
+
+
+random word
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+checkLetter(char letter) {
+        boolean found = false;
+        for (int i = 0; i < targetWord.length(); i++) {
+            if (Character.toLowerCase(targetWord.charAt(i)) == Character.toLowerCase(letter)) {
+                guessedWord[i] = targetWord.charAt(i);  // Beibehalten des ursprünglichen Formats
+                found = true;
+            }
+        }
+        updateFeedback(found, letter);
+    }
+
+
+
+
+
+        Words words = new Words();String
+                 randomWord = words.getRandomWord();
+                 private String GesuchtesWort = randomWord;
+
+            private char[] ToGuessWord;
+             for (int i = 0; i < ToGuessWord.length; i++) {
+            ToGuessWord[ i ] = '_';
+
+               }
+              ToGuessWord = new char[GesuchtesWort.length() * 2 - 1];
+             for (int i = 0; i < ToGuessWord.length; i += 2) {
+                  ToGuessWord[i] = '_';
+                   if (i < ToGuessWord.length - 1) {
+                      ToGuessWord[i + 1] = ' ';
+                   }
+             }
