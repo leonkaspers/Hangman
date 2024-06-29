@@ -1,7 +1,35 @@
 public class Game {
 
     private final String word;
-    //Fields
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public char[] getWordLetters() {
+        return wordLetters;
+    }
+
+    public char[] getCurrentLetters() {
+        return currentLetters;
+    }
+
+    public void setCurrentLetters(char[] currentLetters) {
+        this.currentLetters = currentLetters;
+    }
+
+    public String getCurrentLettersOutputString() {
+        return currentLettersOutputString;
+    }
+
+    public void setCurrentLettersOutputString(String currentLettersOutputString) {
+        this.currentLettersOutputString = currentLettersOutputString;
+    }
+
     private int state;
     private final char[] wordLetters;
 
@@ -78,14 +106,37 @@ public class Game {
     //updates GUI if letter incorrect
     private void wrongInput() {
         this.state = state + 1;
+        if (state == 12) {
+            gameOver();
+        }
 
         // Update GUI TODO
+    }
+
+    private void win() {
+        this.state = 13;
+    }
+
+    private void gameOver() {
+
     }
 
 
     //Hilsfunktionen
     private void generateNewOutputString() {
-//TODO
+        String s = "";
+        for (int i = 0; i < this.currentLetters.length; i++) {
+            if (currentLetters[i] == '\u0000') {
+                s = s + "_";
+            } else {
+                s = s + currentLetters[i];
+            }
+
+            s = s + " ";
+
+        }
+
+        this.currentLettersOutputString = s;
     }
 
 }
