@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Words {
-    String[] hangmanWords = {
+    private static String[] hangmanWords = {
             "Hangman",
             "Abend",
             "Abenteuer",

@@ -1,9 +1,36 @@
+import java.util.Arrays;
+
 public class Game {
 
     private final String word;
+    private final char[] wordLetters;
+    private int state;
+    private char[] currentLetters;
+    private String currentLettersOutputString;
+
+    // Konstruktor für Random Word
+    public Game() {
+        this.state = 1;
+        this.word = Words.getRandomWord();
+        this.wordLetters = this.word.toCharArray();
+        this.currentLetters = new char[this.word.length()];
+        generateNewOutputString();
+    }
+
+    // Konstruktor für benutzerdefiniertes Word
+    public Game(String string) {
+        this.state = 1;
+        this.word = string;
+        this.wordLetters = this.word.toCharArray();
+        this.currentLetters = new char[this.word.length()];
+    }
 
     public int getState() {
         return state;
+    }
+
+    public String getWord() {
+        return word;
     }
 
     public void setState(int state) {
@@ -30,32 +57,10 @@ public class Game {
         this.currentLettersOutputString = currentLettersOutputString;
     }
 
-    private int state;
-    private final char[] wordLetters;
-
-    private char[] currentLetters;
-
-    private String currentLettersOutputString;
-
-    // Konstruktor für Random Word
-    public Game() {
-        this.state = 1;
-        this.word = Words.getRandomWord();
-        this.wordLetters = this.word.toCharArray();
-        this.currentLetters = new char[this.word.length()];
-        generateNewOutputString();
-    }
-
-    // Konstruktor für benutzerdefiniertes Word
-    public Game(String string) {
-        this.state = 1;
-        this.word = string;
-        this.wordLetters = this.word.toCharArray();
-        this.currentLetters = new char[this.word.length()];
-    }
-
-    private void tryInput(String t) {
+    public void tryInput(String t) {
+        t = t.toLowerCase();
         if (t.length() == 0) {
+            return;
         } else if (t.length() == 1) {
             tryLetter(t.charAt(0));
         } else {
@@ -69,8 +74,9 @@ public class Game {
 
     private void tryLetter(char c) {
         for (int i = 0; i < this.wordLetters.length; i++) {
-            if (c == this.wordLetters[i]) {
+            if (c == Character.toLowerCase(this.wordLetters[i])) {
                 correctLetter(c);
+                return;
             }
         }
 
@@ -80,11 +86,15 @@ public class Game {
     //updates currenLetters Array and GUI if letter correct
     private void correctLetter(char c) {
         for (int i = 0; i < this.wordLetters.length; i++) {
-            if (c == this.wordLetters[i]) {
-                this.currentLetters[i] = c;
+            if (c == Character.toLowerCase(this.wordLetters[i])) {
+                this.currentLetters[i] = this.wordLetters[i];
             }
         }
         generateNewOutputString();
+
+        if (Arrays.equals(this.wordLetters, this.currentLetters)) {
+            win();
+        }
 
         // Update GUI TODO
     }
@@ -93,9 +103,7 @@ public class Game {
     // Word Code
 
     private void tryWord(String w) {
-        if (w.equals(this.word)) {
-            this.currentLetters = this.wordLetters;
-            generateNewOutputString();
+        if (w.equals(this.word.toLowerCase())) {
             win();
         } else {
             wrongInput();
@@ -115,6 +123,8 @@ public class Game {
 
     private void win() {
         this.state = 13;
+        this.currentLetters = this.wordLetters;
+        generateNewOutputString();
     }
 
     private void gameOver() {
