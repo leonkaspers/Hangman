@@ -4,15 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class StickFigureDrawing extends JFrame {
-    private int step = 0;   //für step counter umd nach fehlern zu malen
     private final JButton restartButton; /////////////////////////////////////////////////
+    private int step = 0;   //für step counter umd nach fehlern zu malen
     private JTextField letterInputField; // Eingabefeld für den Buchstaben
     private JTextArea feedbackArea;
-
-    public int getStep() {     //für die Anzahl der Steps um diesen, falls falsch, zu erhöhen
-        return this.step;
-
-    }
+    private Game game;
 
     public StickFigureDrawing() //fenster specs + button
     { /////Willkommen bei HangmanAI
@@ -27,6 +23,9 @@ public class StickFigureDrawing extends JFrame {
         restartButton = new JButton("-> Neues Spiel <-");
         restartButton.setVisible(false); ///////////////////////////////////////////
 
+        //neues Game erstellen
+        this.game = new Game();
+
 
 // Eingabefeld und Feedback-Bereich initialisieren
         letterInputField = new JTextField(10);
@@ -36,16 +35,19 @@ public class StickFigureDrawing extends JFrame {
         nextButton.addActionListener(new ActionListener() {
                                          @Override
                                          public void actionPerformed(ActionEvent e) {
-                                             step++;
-                                             if (step==12||step==13) {
-                                                 restartButton.setVisible(true);}
-                                             drawPanel.repaint();
-                                             // if (step>=1)
-                                             // {nextButton.setVisible(false);}
-                                             //zum durchtesten:
-                                             if (step>=0)
-                                             {nextButton.setVisible(true);}
+                                             String input = letterInputField.getText();
+                                             game.tryInput(input); // Verwenden der tryInput-Methode der Game-Klasse
 
+                                             step = game.getState(); // Aktualisieren des step-Werts basierend auf dem Zustand des Spiels
+
+                                             if (step == 12 || step == 13) {
+                                                 restartButton.setVisible(true);
+                                             }
+
+                                             drawPanel.repaint();
+                                             if (step >= 0) {
+                                                 nextButton.setVisible(true);
+                                             }
                                          }
                                      }
         );
@@ -81,8 +83,13 @@ public class StickFigureDrawing extends JFrame {
         add(bottomPanel, BorderLayout.SOUTH);
 
 
+    }
+
+    public int getStep() {     //für die Anzahl der Steps um diesen, falls falsch, zu erhöhen
+        return this.step;
 
     }
+
     class DrawPanel extends JPanel //definiert das Fenster
     {
         @Override
@@ -97,7 +104,7 @@ public class StickFigureDrawing extends JFrame {
             g.setColor(new Color(34, 139, 34));
             g.fillArc(1000, 700, 400, 700, 5, 180); // Shifted to the right bottom
 
-            if(step<=11){
+            if (step <= 11) {
                 g.setFont(new Font("Consolas", Font.BOLD, 80));
                 g.drawString("Hangman", 650, 100);
                 g.drawString("Lösung", 200, 400);
@@ -178,27 +185,26 @@ public class StickFigureDrawing extends JFrame {
                 g.drawLine(1400, 500, 1450, 600);
 
 
+            }
+            if (step >= 13) {
+                g2.drawLine(1200, 400, 1300, 300);
+                setBackground(Color.WHITE);
+                g.setColor(Color.GREEN);
+                g.setFont(new Font("Consolas", Font.BOLD, 80));
+                g.drawString("Hangman", 650, 100);
+                g.drawString("Richtig Geraten", 300, 400);
+                g.setFont(new Font("Consolas", Font.BOLD, 30));
+                g.drawString("Du hast das Wort " + "Lösung" + " richtig geraten", 300, 500); //
+                g.setColor(Color.BLACK);
+                g.fillOval(1385, 365, 5, 5);
+                g.fillOval(1410, 365, 5, 5);
+                g.drawArc(1385, 375, 30, 20, 0, -180);
 
 
-        }if (step >= 13)
-
-        {
-            g2.drawLine(1200, 400, 1300, 300);
-            setBackground(Color.WHITE);
-            g.setColor(Color.GREEN);
-            g.setFont(new Font("Consolas", Font.BOLD, 80));
-            g.drawString("Hangman", 650, 100);
-            g.drawString("Richtig Geraten", 300, 400);
-            g.setFont(new Font("Consolas", Font.BOLD, 30));
-            g.drawString("Du hast das Wort "+"Lösung" +" richtig geraten", 300, 500); //
-            g.setColor(Color.BLACK);
-            g.fillOval(1385, 365, 5, 5);
-            g.fillOval(1410, 365, 5, 5);
-            g.drawArc(1385, 375, 30, 20, 0, -180);
-
+            }
 
         }
-
-    } }}
+    }
+}
 
 
