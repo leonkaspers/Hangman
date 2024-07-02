@@ -42,6 +42,11 @@ public class NewGui extends JFrame implements ActionListener {
         header.add(title);
         header.add(help);
 
+        // Creating live Panel
+        JPanel live = new JPanel();
+        outputField = new JLabel();
+        live.add(outputField);
+
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
@@ -58,15 +63,20 @@ public class NewGui extends JFrame implements ActionListener {
         // Add Action Listener
         input.addActionListener(this);
         reset.addActionListener(this);
+        help.addActionListener(this);
 
         // Text Area at the Center
         output = new JTextArea();
         output.setEditable(false);
 
+// Adding components to main panel
+        mainPanel.add(header);
+        mainPanel.add(live);
+        mainPanel.add(output);
+        mainPanel.add(panel);
 
         //Adding Components to the frame.
-        frame.getContentPane().add(BorderLayout.SOUTH, panel);
-        frame.getContentPane().add(BorderLayout.CENTER, output);
+        frame.add(mainPanel);
         frame.setVisible(true);
 
         state = 0;
@@ -181,7 +191,7 @@ public class NewGui extends JFrame implements ActionListener {
 
         private void drawAll(Graphics g) //
         {
-            g.setColor(new Color(34, 139, 34));
+            g.setColor(new Color(0, 255, 0));
             g.fillArc(1000, 700, 400, 700, 5, 180); // Shifted to the right bottom
 
             if (state <= 11) {
