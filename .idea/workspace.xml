@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Add comprehensive Javadoc comments to Game class and fixed wrong win state.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui.java" afterDir="false" />
-    </list>
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="renamed and deleted old files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +41,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.GameTest.executor": "Run",
+    "Application.Hangman.executor": "Run",
     "Application.HangmanGame.executor": "Run",
     "Application.NewGui.executor": "Run",
     "Application.RandomWord.executor": "Run",
@@ -66,8 +64,8 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="NewGui" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="NewGui" />
+    <configuration name="Hangman" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Hangman" />
       <module name="Hangman" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,7 +175,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719954856780</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="cleaned the new gui class">
+      <option name="closed" value="true" />
+      <created>1719955678740</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955678740</updated>
+    </task>
+    <task id="LOCAL-00012" summary="renamed and deleted old files">
+      <option name="closed" value="true" />
+      <created>1719955822906</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955822906</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +223,9 @@
     <MESSAGE value="Draw panal hinzugefügt :)" />
     <MESSAGE value="graphics work finally" />
     <MESSAGE value="Add comprehensive Javadoc comments to Game class and fixed wrong win state." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add comprehensive Javadoc comments to Game class and fixed wrong win state." />
+    <MESSAGE value="cleaned the new gui class" />
+    <MESSAGE value="renamed and deleted old files" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed and deleted old files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
