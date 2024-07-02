@@ -1,6 +1,6 @@
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.SequencedCollection;
 
 public class Game {
 
@@ -8,8 +8,10 @@ public class Game {
     private final char[] wordLetters;
     private int state;
     private char[] currentLetters;
-    private List<Character> usedLetters;
+    private LinkedList<String> used = new LinkedList<>();
     private String currentLettersOutputString;
+    private String usedOutputString = "";
+    private String currentInput;
 
     // Konstruktor für Random Word
     public Game() {
@@ -28,6 +30,11 @@ public class Game {
         this.currentLetters = new char[this.word.length()];
     }
 
+    public String getUsedOutputString() {
+        usedOutputString = used.toString();
+        return usedOutputString;
+    }
+
     public int getState() {
         return state;
     }
@@ -36,23 +43,8 @@ public class Game {
         return word;
     }
 
-    public void setState(int state) {
-        this.state = state;
-    }
-
-    public char[] getWordLetters() {
-        return wordLetters;
-    }
-
-    public char[] getCurrentLetters() {
-        return currentLetters;
-    }
-
-    public void setCurrentLetters(char[] currentLetters) {
-        this.currentLetters = currentLetters;
-    }
-
-    public String getCurrentLettersOutputString() {
+    public String getCurrentLetters() {
+        generateNewOutputString();
         return currentLettersOutputString;
     }
 
@@ -60,15 +52,19 @@ public class Game {
         this.currentLettersOutputString = currentLettersOutputString;
     }
 
+
     public void tryInput(String t) {
+        currentInput = t;
         t = t.toLowerCase();
         if (t.length() == 0) {
             return;
         } else if (t.length() == 1) {
             tryLetter(t.charAt(0));
+            addToUsed();
         } else {
             tryWord(t);
         }
+
 
     }
 
@@ -78,7 +74,7 @@ public class Game {
     private void tryLetter(char c) {
         for (int i = 0; i < this.wordLetters.length; i++) {
             if (c == Character.toLowerCase(this.wordLetters[i])) {
-                addToUsedLetters(c);
+
                 correctLetter(c);
                 return;
             }
@@ -94,7 +90,6 @@ public class Game {
                 this.currentLetters[i] = this.wordLetters[i];
             }
         }
-        generateNewOutputString();
 
         if (Arrays.equals(this.wordLetters, this.currentLetters)) {
             win();
@@ -118,30 +113,16 @@ public class Game {
     //updates GUI if letter incorrect
     private void wrongInput() {
         this.state = state + 1;
-        if (state == 11) {
-            gameOver();
-        }
-
-        // Update GUI TODO
     }
 
     private void win() {
         this.state = 12;
         this.currentLetters = this.wordLetters;
-        generateNewOutputString();
     }
 
-    private void gameOver() {
-
-    }
-
-    public List<Character> getUsedLetters() {
-        return usedLetters;
-    }
-
-    private void addToUsedLetters(char c) {
-        if (!this.usedLetters.contains((Character) c)) {
-            usedLetters.add((Character) c);
+    private void addToUsed() {
+        if (!this.used.contains(currentInput)) {
+            used.add(currentInput);
         }
     }
 
