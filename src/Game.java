@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.List;
+import java.util.SequencedCollection;
 
 public class Game {
 
@@ -6,6 +8,7 @@ public class Game {
     private final char[] wordLetters;
     private int state;
     private char[] currentLetters;
+    private List<Character> usedLetters;
     private String currentLettersOutputString;
 
     // Konstruktor für Random Word
@@ -75,6 +78,7 @@ public class Game {
     private void tryLetter(char c) {
         for (int i = 0; i < this.wordLetters.length; i++) {
             if (c == Character.toLowerCase(this.wordLetters[i])) {
+                addToUsedLetters(c);
                 correctLetter(c);
                 return;
             }
@@ -114,7 +118,7 @@ public class Game {
     //updates GUI if letter incorrect
     private void wrongInput() {
         this.state = state + 1;
-        if (state == 12) {
+        if (state == 11) {
             gameOver();
         }
 
@@ -122,13 +126,23 @@ public class Game {
     }
 
     private void win() {
-        this.state = 13;
+        this.state = 12;
         this.currentLetters = this.wordLetters;
         generateNewOutputString();
     }
 
     private void gameOver() {
 
+    }
+
+    public List<Character> getUsedLetters() {
+        return usedLetters;
+    }
+
+    private void addToUsedLetters(char c) {
+        if (!this.usedLetters.contains((Character) c)) {
+            usedLetters.add((Character) c);
+        }
     }
 
 
