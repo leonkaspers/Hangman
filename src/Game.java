@@ -91,16 +91,14 @@ public class Game {
      */
     public void tryInput(String t) {
 
-        if (!active) { return;}
-
         // safe input with correct casing still intact
-        currentInput = t;
+        //currentInput = t;
 
         // set input to lower case to ease all future operations
         t = t.toLowerCase();
 
         // decide if input is letter or word
-        if (t.isEmpty()) {
+        if (t.isEmpty() || !active || used.contains(t)) {
             return;
         } else if (t.length() == 1) {
             tryLetter(t.charAt(0));
@@ -109,7 +107,7 @@ public class Game {
         }
 
         // add the input to the used list
-        addToUsed();
+        addToUsed(t);
     }
 
     /**
@@ -209,9 +207,9 @@ public class Game {
     /**
      * Adds the current input to the used letters.
      */
-    private void addToUsed() {
-        if (!this.used.contains(currentInput)) {
-            used.add(currentInput);
+    private void addToUsed(String string) {
+        if (!this.used.contains(string)) {
+            used.add(string);
         }
     }
 
