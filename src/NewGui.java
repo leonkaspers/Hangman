@@ -20,23 +20,32 @@ public class NewGui extends JFrame implements ActionListener {
     JLabel outputField;
     JButton help;
 
+    DrawPanel graphic;
+
+
+    @Override
+    public int getState() {
+        return state;
+    }
+
+
     int state;
 
     Game game;
 
-    public NewGui() throws IOException {
-
+    public NewGui()  {
         //Creating the Frame
         JFrame frame = new JFrame("Hangman");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1600, 900);
 
         //creating Basic Layout
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+
+        JPanel mainPanel = new JPanel(new BorderLayout());
+
+
         // Creating TOP Panel and Help Button
         JPanel header = new JPanel(new BorderLayout());
-        // JLabel title = new JLabel("HangmanAI");
         JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JLabel title = new JLabel("HangmanAI");
         centerPanel.add(title);
@@ -47,13 +56,19 @@ public class NewGui extends JFrame implements ActionListener {
 
         header.add(leftPanel, BorderLayout.WEST);
         header.add(centerPanel, BorderLayout.CENTER);
+
+
         // Restrict the size of the header panel
         header.setMaximumSize(new Dimension(1600, 40));
+
 
         // Creating live Panel
         JPanel live = new JPanel();
         outputField = new JLabel();
         live.add(outputField);
+
+        //creating Draw Panel
+        graphic = new DrawPanel(this);
 
         // Creating usedPanel
         JPanel usedPanel = new JPanel();
@@ -61,7 +76,6 @@ public class NewGui extends JFrame implements ActionListener {
         usedLetter = new JLabel();
         usedPanel.add(usedLettersText);
         usedPanel.add(usedLetter);
-
 
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
@@ -73,7 +87,9 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(inputField);
         panel.add(input);
         panel.add(reset);
+
         inputField.addActionListener(ae -> input.doClick());
+
 
 
         // Add Action Listener
@@ -84,19 +100,30 @@ public class NewGui extends JFrame implements ActionListener {
         // Text Area at the Center
         output = new JTextArea();
         output.setEditable(false);
-// Adding components to main panel
-        mainPanel.add(header);
-        mainPanel.add(live);
-        mainPanel.add(output);
-        mainPanel.add(usedPanel);
-        mainPanel.add(panel);
+
+
+        // Creating north and south panels
+        JPanel northPanel = new JPanel();
+        northPanel.setLayout(new BoxLayout(northPanel, BoxLayout.Y_AXIS));
+        northPanel.add(header);
+        northPanel.add(live);
+
+        JPanel southPanel = new JPanel();
+        southPanel.setLayout(new BoxLayout(southPanel, BoxLayout.Y_AXIS));
+        southPanel.add(usedPanel);
+        southPanel.add(panel);
+
+        // Adding components to main panel
+        mainPanel.add(northPanel, BorderLayout.NORTH);
+        mainPanel.add(graphic, BorderLayout.CENTER);
+        mainPanel.add(southPanel, BorderLayout.SOUTH);
+
 
         //Adding Components to the frame.
         frame.add(mainPanel);
         frame.setVisible(true);
         state = 0;
         updateGUI();
-
     }
 
     public static void main(String[] args) throws IOException {
@@ -130,6 +157,7 @@ public class NewGui extends JFrame implements ActionListener {
         } else if (ae.getSource() == this.help) {
             // create new Textbox
             // TODO Hilfe schreiben und evlt. anderen Hilfe Button
+
             JOptionPane.showMessageDialog(null, "Willkommen in der HamgmanAi Hilfezentrale\n\n" +
                     "Hier die Spielregeln:\n" +
                     "\n" +
@@ -156,6 +184,7 @@ public class NewGui extends JFrame implements ActionListener {
                     "Niederlage: \n" +
                     "Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n"+
                     "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden.\n\n\n ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
+
         }
 
         updateGUI();
@@ -163,7 +192,14 @@ public class NewGui extends JFrame implements ActionListener {
 
     private void updateGUI() {
         if (!(this.game == null)) {
-        usedLetter.setText(this.game.getUsedOutputString()); }
+            usedLetter.setText(this.game.getUsedOutputString());
+        }
+
+        Graphics g = this.getGraphics();
+
+        if (!(g == null)) {
+            graphic.repaint();
+        }
 
 
         switch (this.state) {
@@ -228,4 +264,6 @@ public class NewGui extends JFrame implements ActionListener {
     }
 
 
+
 }
+
