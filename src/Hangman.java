@@ -14,7 +14,6 @@ public class Hangman extends JFrame implements ActionListener {
 
     // UI components that need to be referenced later
     JPanel panel;
-    JLabel label; // static machen
     JLabel usedLetter;
     JTextField inputField;
     JTextArea output;
@@ -81,11 +80,11 @@ public class Hangman extends JFrame implements ActionListener {
 
         //Creating the panel at bottom and adding components
         panel = new JPanel();
-        label = new JLabel("Enter Text");
+        JLabel enterTextLabel = new JLabel("Enter Text");
         inputField = new JTextField(15);
         input = new JButton("Eingabe");
         reset = new JButton("Reset");   // Als Resetbutton
-        panel.add(label);
+        panel.add(enterTextLabel);
         panel.add(inputField);
         panel.add(input);
         panel.add(reset);
