@@ -109,7 +109,7 @@ public class NewGui extends JFrame implements ActionListener {
         if (!(game.getUsedLetters() == null)) {
             usedLetter.setText(game.getUsedLetters().toString());
         }
-        graphic.pa
+
         switch (this.state) {
             case 0: {
                 output.append("Bitte Wort eingeben, leer lassen für random word");
@@ -169,6 +169,7 @@ public class NewGui extends JFrame implements ActionListener {
         }
     }
 
+    //Grafika teil Das Galgenmänchen
     class DrawPanel extends JPanel //definiert das Fenster
     {
         @Override

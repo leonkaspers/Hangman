@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Starting to create Main Panel and finished Layout">
-      <change beforePath="$PROJECT_DIR$/src/NewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui.java" afterDir="false" />
-    </list>
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Draw panal hinzugefügt :)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +50,7 @@
     "Application.gameStarten.executor": "Run",
     "Application.temp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "New-GUI",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1",
     "node.js.detected.package.eslint": "true",
@@ -151,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719927627749</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Draw panal hinzugefügt :)">
+      <option name="closed" value="true" />
+      <created>1719931640971</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719931640971</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +183,8 @@
     <MESSAGE value="Basix Text Based Game finished" />
     <MESSAGE value="Tried to implement used letters but failed" />
     <MESSAGE value="Starting to create Main Panel and finished Layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting to create Main Panel and finished Layout" />
+    <MESSAGE value="Draw panal hinzugefügt :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draw panal hinzugefügt :)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
