@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="renamed and deleted old files" />
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="made useless field static">
+      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +194,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719955822906</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="renamed and deleted old files">
+      <option name="closed" value="true" />
+      <created>1719955835627</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955835627</updated>
+    </task>
+    <task id="LOCAL-00014" summary="made useless field static">
+      <option name="closed" value="true" />
+      <created>1719955980318</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955980318</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,19 +244,20 @@
     <MESSAGE value="Add comprehensive Javadoc comments to Game class and fixed wrong win state." />
     <MESSAGE value="cleaned the new gui class" />
     <MESSAGE value="renamed and deleted old files" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed and deleted old files" />
+    <MESSAGE value="made useless field static" />
+    <option name="LAST_COMMIT_MESSAGE" value="made useless field static" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Game.java</url>
-          <line>167</line>
+          <line>165</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DrawPanel.java</url>
-          <line>25</line>
+          <line>22</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

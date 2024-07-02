@@ -11,7 +11,6 @@ public class Game {
 
     // A list of the already used words and the string generated from that list
     private final LinkedList<String> used = new LinkedList<>();
-    private String usedOutputString = "";
 
     // The current game state
     private int state;
@@ -56,8 +55,7 @@ public class Game {
      * @return The string representation of the used letters.
      */
     public String getUsedOutputString() {
-        usedOutputString = used.toString();
-        return usedOutputString;
+        return used.toString();
     }
 
     /**
@@ -181,22 +179,22 @@ public class Game {
     }
 
 
-    //Hilsfunktionen
+    //Helper Functions
 
     /**
      * Generates a new output string for the current letters.
      */
     private void generateNewOutputString() {
-        String s = "";
-        for (int i = 0; i < this.currentLetters.length; i++) {
-            if (currentLetters[i] == '\u0000') {
-                s = s + "_";
+        StringBuilder s = new StringBuilder();
+        for (char currentLetter : this.currentLetters) {
+            if (currentLetter == '\u0000') {
+                s.append("_");
             } else {
-                s = s + currentLetters[i];
+                s.append(currentLetter);
             }
-            s = s + " ";
+            s.append(" ");
         }
-        this.currentLettersOutputString = s;
+        this.currentLettersOutputString = s.toString();
     }
 
     /**
