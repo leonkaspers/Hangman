@@ -35,6 +35,13 @@ public class NewGui extends JFrame implements ActionListener {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
+        // Creating TOP Panel and Help Button
+        JPanel header = new JPanel();
+        JLabel title = new JLabel("HangmanAI");
+        help = new JButton("Help");
+        header.add(title);
+        header.add(help);
+
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
@@ -47,7 +54,7 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(input);
         panel.add(reset);
 
-        // Creating TOP Panel and Help Button
+
 
 
         // Add Action Listener
@@ -104,6 +111,7 @@ public class NewGui extends JFrame implements ActionListener {
         if (!(game.getUsedLetters() == null)) {
             usedLetter.setText(game.getUsedLetters().toString());
         }
+        graphic.pa
         switch (this.state) {
             case 0: {
                 output.append("Bitte Wort eingeben, leer lassen für random word");
