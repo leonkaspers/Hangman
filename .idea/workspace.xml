@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Draw panal hinzugefügt :)" />
-
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Draw panal hinzugefügt :)">
+      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +45,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.GameTest.executor": "Run",
     "Application.HangmanGame.executor": "Run",
-    "Application.NewGui.executor": "Run",
+    "Application.NewGui.executor": "Debug",
     "Application.RandomWord.executor": "Run",
     "Application.RandomWordPrinter.executor": "Run",
     "Application.StickFigureDrawing.executor": "Run",
@@ -52,9 +53,7 @@
     "Application.gameStarten.executor": "Run",
     "Application.temp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-
     "git-widget-placeholder": "master",
-
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1",
     "node.js.detected.package.eslint": "true",
@@ -198,6 +197,11 @@
           <url>file://$PROJECT_DIR$/src/Game.java</url>
           <line>113</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DrawPanel.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

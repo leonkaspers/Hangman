@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 
-
 // Gui für wort raten mit rückgabe von false oder variabler + 1 sonst draw im besten fall in eine sich erneuernde Zeile
 
 public class NewGui extends JFrame implements ActionListener {
@@ -33,7 +32,7 @@ public class NewGui extends JFrame implements ActionListener {
 
     Game game;
 
-    public NewGui()  {
+    public NewGui() {
         //Creating the Frame
         JFrame frame = new JFrame("Hangman");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,7 +90,6 @@ public class NewGui extends JFrame implements ActionListener {
         inputField.addActionListener(ae -> input.doClick());
 
 
-
         // Add Action Listener
         input.addActionListener(this);
         reset.addActionListener(this);
@@ -128,7 +126,7 @@ public class NewGui extends JFrame implements ActionListener {
 
     public static void main(String[] args) throws IOException {
         NewGui gui = new NewGui();
-       // gui.setVisible(true);   Macht neues Extra fenster auf XD
+        // gui.setVisible(true);   Macht neues Extra fenster auf XD
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -141,6 +139,7 @@ public class NewGui extends JFrame implements ActionListener {
             }
             this.state = game.getState();
             output.append(game.getWord() + "\n");
+            inputField.setText(game.getWord());
 
         } else if (ae.getSource() == this.input && game != null) {
             output.append("Eingabe" + inputField.getText() + "\n");
@@ -182,7 +181,7 @@ public class NewGui extends JFrame implements ActionListener {
                     "bevor das Galgenmännchen komplett gezeichnet ist.\n" +
                     "\n" +
                     "Niederlage: \n" +
-                    "Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n"+
+                    "Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n" +
                     "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden.\n\n\n ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
 
         }
@@ -196,10 +195,7 @@ public class NewGui extends JFrame implements ActionListener {
         }
 
         Graphics g = this.getGraphics();
-
-        if (!(g == null)) {
-            graphic.repaint();
-        }
+        graphic.repaint();
 
 
         switch (this.state) {
@@ -262,7 +258,6 @@ public class NewGui extends JFrame implements ActionListener {
             }
         }
     }
-
 
 
 }
