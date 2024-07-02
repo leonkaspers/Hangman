@@ -98,12 +98,12 @@ public class Game {
         t = t.toLowerCase();
 
         // decide if input is letter or word
-        if (t.isEmpty()) {
-            return 1;
+        if (used.contains(t)) {
+            return 3;
         } else if (!active) {
             return 2;
-        } else if (used.contains(t)) {
-            return 3;
+        } else if (t.isEmpty()) {
+            return 1;
         } else if (t.length() == 1) {
             tryLetter(t.charAt(0));
         } else {

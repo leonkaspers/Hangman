@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="further clean up">
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="added errorMessage">
+      <change beforePath="$PROJECT_DIR$/src/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hangman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,7 @@
     "Application.gameStarten.executor": "Run",
     "Application.temp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "bug-fixes-leon",
+    "git-widget-placeholder": "add-error-messages",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1",
     "node.js.detected.package.eslint": "true",
@@ -261,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719957499417</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added errorMessage">
+      <option name="closed" value="true" />
+      <created>1719958274849</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1719958274849</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +308,8 @@
     <MESSAGE value="added active state" />
     <MESSAGE value="added active state and fixed bug" />
     <MESSAGE value="further clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="further clean up" />
+    <MESSAGE value="added errorMessage" />
+    <option name="LAST_COMMIT_MESSAGE" value="added errorMessage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

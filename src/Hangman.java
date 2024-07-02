@@ -78,6 +78,7 @@ public class Hangman extends JFrame implements ActionListener {
         errorMessage.setForeground(Color.RED);
         usedPanel.add(usedLettersText);
         usedPanel.add(usedLetter);
+        usedPanel.add(errorMessage);
 
         //Creating the panel at bottom and adding components
         panel = new JPanel();
@@ -169,10 +170,29 @@ public class Hangman extends JFrame implements ActionListener {
 
             // game is on the way, new input was send
         } else if (ae.getSource() == this.input && game != null) {
-            output.append("Eingabe" + inputField.getText() + "\n");
-            game.tryInput(inputField.getText());
-            output.append(game.getCurrentLetters() + "\n");
-            outputField.setText(game.getCurrentLetters());
+
+            switch (game.tryInput(inputField.getText())) {
+                case 0:{
+                    errorMessage.setVisible(false);
+                    break;
+                }
+                case 1: {
+                    errorMessage.setText("Das doch keine Eingabe du Vogel!!!!!!!!!");
+                    errorMessage.setVisible(true);
+                    break;
+                }
+                case 2: {
+                    errorMessage.setText("Das Spiel ist doch schon längst fertig, du Ameisenbär!");
+                    errorMessage.setVisible(true);
+                    break;
+                }
+                case 3: {
+                    errorMessage.setText("Das hast du schonmal eingegeben du Spatzenhirn...");
+                    errorMessage.setVisible(true);
+                    break;
+                }
+            }
+
             state = game.getState();
             inputField.setText("");
 
@@ -239,6 +259,7 @@ public class Hangman extends JFrame implements ActionListener {
                 output.append("Bitte Wort eingeben, leer lassen für random word");
                 input.setVisible(true);
                 input.setText("Spiel Starten");
+                errorMessage.setVisible(false);
                 break;
             }
             case 1: {
