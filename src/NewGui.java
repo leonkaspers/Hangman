@@ -68,6 +68,7 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(inputField);
         panel.add(input);
         panel.add(reset);
+        panel.add(usedLetter);
 
 
         // Add Action Listener
@@ -108,12 +109,12 @@ public class NewGui extends JFrame implements ActionListener {
                 inputField.setText("");
             }
 
-            output.append(game.getWord());
+            output.append(game.getWord() + "\n");
 
         } else if (ae.getSource() == this.input && game != null) {
             output.append("Eingabe" + inputField.getText() + "\n");
             game.tryInput(inputField.getText());
-            output.append(game.getCurrentLettersOutputString() + "\n");
+            output.append(game.getCurrentLetters() + "\n");
             state = game.getState();
             updateGUI();
             inputField.setText("");
@@ -150,9 +151,8 @@ public class NewGui extends JFrame implements ActionListener {
     }
 
     private void updateGUI() {
-        if (!(game.getUsedLetters() == null)) {
-            usedLetter.setText(game.getUsedLetters().toString());
-        }
+        if (!(this.game == null)) {
+        usedLetter.setText(this.game.getUsedOutputString()); }
 
         switch (this.state) {
             case 0: {

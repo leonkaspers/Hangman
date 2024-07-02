@@ -13,15 +13,15 @@ public class GameTest {
             String input = scanner.nextLine();
 
             game.tryInput(input);
-            System.out.println(game.getCurrentLettersOutputString());
+            System.out.println(game.getCurrentLetters());
         }
 
         if (game.getState() == 12) {
             System.out.println("You Loose");
-            System.out.println(game.getCurrentLettersOutputString());
+            System.out.println(game.getCurrentLetters());
         } else if (game.getState() == 13) {
             System.out.println("You Win");
-            System.out.println(game.getCurrentLettersOutputString());
+            System.out.println(game.getCurrentLetters());
         } else {
             System.out.println("something went wrong");
         }
