@@ -112,6 +112,10 @@ public class NewGui extends JFrame implements ActionListener {
             state = 0;
             updateGUI();
 
+        } else if (ae.getSource() == this.help) {
+            // create new Textbox
+            // TODO Hilfe schreiben und evlt. anderen Hilfe Button
+            JOptionPane.showMessageDialog(null, "hier könnte ihre Hilfe stehen", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
