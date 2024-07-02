@@ -14,7 +14,7 @@ Stelle sicher, dass Java auf deinem Computer installiert ist. Klonen dann dieses
 
 ## Ausführung
 
-Für die Klasse `NewGui.java` aus.
+Für die Klasse `Hangman.java` aus.
 
 ## Spielanleitung
 
