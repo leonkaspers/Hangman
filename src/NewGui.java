@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 
+
 // Gui für wort raten mit rückgabe von false oder variabler + 1 sonst draw im besten fall in eine sich erneuernde Zeile
 
 public class NewGui extends JFrame implements ActionListener {
@@ -18,7 +19,6 @@ public class NewGui extends JFrame implements ActionListener {
     JButton reset;
     JLabel outputField;
     JButton help;
-    StickFigureDrawing.DrawPanel graphic;
 
     int state;
 
@@ -34,7 +34,6 @@ public class NewGui extends JFrame implements ActionListener {
         //creating Basic Layout
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-
         // Creating TOP Panel and Help Button
         JPanel header = new JPanel(new BorderLayout());
         // JLabel title = new JLabel("HangmanAI");
@@ -48,7 +47,6 @@ public class NewGui extends JFrame implements ActionListener {
 
         header.add(leftPanel, BorderLayout.WEST);
         header.add(centerPanel, BorderLayout.CENTER);
-
         // Restrict the size of the header panel
         header.setMaximumSize(new Dimension(1600, 40));
 
@@ -78,7 +76,6 @@ public class NewGui extends JFrame implements ActionListener {
         inputField.addActionListener(ae -> input.doClick());
 
 
-
         // Add Action Listener
         input.addActionListener(this);
         reset.addActionListener(this);
@@ -87,7 +84,6 @@ public class NewGui extends JFrame implements ActionListener {
         // Text Area at the Center
         output = new JTextArea();
         output.setEditable(false);
-
 // Adding components to main panel
         mainPanel.add(header);
         mainPanel.add(live);
@@ -98,7 +94,6 @@ public class NewGui extends JFrame implements ActionListener {
         //Adding Components to the frame.
         frame.add(mainPanel);
         frame.setVisible(true);
-
         state = 0;
         updateGUI();
 
@@ -106,7 +101,7 @@ public class NewGui extends JFrame implements ActionListener {
 
     public static void main(String[] args) throws IOException {
         NewGui gui = new NewGui();
-        gui.setVisible(true);
+       // gui.setVisible(true);   Macht neues Extra fenster auf XD
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -135,27 +130,32 @@ public class NewGui extends JFrame implements ActionListener {
         } else if (ae.getSource() == this.help) {
             // create new Textbox
             // TODO Hilfe schreiben und evlt. anderen Hilfe Button
-            JOptionPane.showMessageDialog(null, "Willkommen in der HamgmanAi Hilfezentrale\n" +
+            JOptionPane.showMessageDialog(null, "Willkommen in der HamgmanAi Hilfezentrale\n\n" +
                     "Hier die Spielregeln:\n" +
                     "\n" +
                     "Spielablauf:\n" +
                     "\n" +
-                    "Buchstaben raten: Der Spieler, also DU, rät eine Reihe an Buchstaben um ein Verdecktes Wort zu erraten.\n" +
-                    "Die Rateversuche sind begrenzt.\n" +
+                    "Buchstaben raten:\n" +
+                    "Der Spieler, also DU, rät eine Reihe an Buchstaben um ein Verdecktes Wort zu erraten.\n" +
+                    "Die Rateversuche sind begrenzt. Die eingabe erfolgt über Button on screen oder Enter\n" +
                     "\n" +
-                    "Richtiger Buchstaben: Wenn ein geratener Buchstabe im Wort vorkommt, schreibt das Spiel\n" +
+                    "Richtiger Buchstaben: \n" +
+                    "Wenn ein geratener Buchstabe im Wort vorkommt, schreibt das Spiel\n" +
                     "diesen Buchstaben an die entsprechenden Stellen, die durch die Striche markiert sind.\n" +
                     "\n" +
-                    "Falsche Buchstaben: Wird ein falscher Buchstabe genannt, der nicht im Wort vorkommt,\n" +
-                    "wird vom Spiel einen Teil zum Galgenmännchen hinzu.\n" +
-                    "Dies wie Folgt, Galgen, Strick, Kopf und Körper des Galgenmännchens was das Maximum\n" +
+                    "Falsche Buchstaben: \n" +
+                    "Wird ein falscher Buchstabe genannt, der nicht im Wort vorkommt,\n" +
+                    "wird vom Spiel einen Teil zum Galgenmännchen hinzugefügt.\n" +
+                    "Dies wie Folgt, Galgen, Strick, Kopf und Körper des Galgenmännchens, das Maximum\n" +
                     "an Fehlversuchen ist erreicht, wenn das Männchen „gehängt“ ist.\n" +
                     "\n" +
-                    "Gewinn: Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde \n" +
+                    "Gewinn: \n" +
+                    "Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde \n" +
                     "bevor das Galgenmännchen komplett gezeichnet ist.\n" +
                     "\n" +
-                    "Niederlage: Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n"+
-                    "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden. ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
+                    "Niederlage: \n" +
+                    "Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n"+
+                    "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden.\n\n\n ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
         }
 
         updateGUI();
@@ -164,6 +164,7 @@ public class NewGui extends JFrame implements ActionListener {
     private void updateGUI() {
         if (!(this.game == null)) {
         usedLetter.setText(this.game.getUsedOutputString()); }
+
 
         switch (this.state) {
             case 0: {
@@ -226,125 +227,5 @@ public class NewGui extends JFrame implements ActionListener {
         }
     }
 
-    //Grafika teil Das Galgenmänchen
-    class DrawPanel extends JPanel //definiert das Fenster
-    {
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            drawAll(g);
 
-        }
-
-
-
-
-        //in neue klasse?! Konstruktor geben damit der andere code bei den cases daruf zugreiffen und deise übernehmen kann
-        private void drawAll(Graphics g) //
-        {
-            g.setColor(new Color(0, 255, 0));
-            g.fillArc(1000, 700, 400, 700, 5, 180); // Shifted to the right bottom
-
-            if (state <= 11) {
-                g.setFont(new Font("Consolas", Font.BOLD, 80));
-                g.drawString("Hangman", 650, 100);
-                g.drawString("Lösung", 200, 400);
-
-            }
-
-            Graphics2D g2 = (Graphics2D) g;
-            g2.setColor(new Color(139, 69, 19)); // Brown
-            g2.setStroke(new BasicStroke(5)); // 5 pixel dicke Pfosten
-
-            // durchgehen des Galgens stück für stück // >= nicht == sonst wird überschrieben
-            if (state >= 2) {
-                g2.drawLine(1200, 700, 1200, 300);
-            }
-            if (state >= 3) {
-                g2.drawLine(1200, 300, 1400, 300);
-            }
-            if (state >= 4) {
-                g2.drawLine(1200, 400, 1300, 300);
-            }
-            // Seil
-            if (state >= 5) {
-                g2.setColor(Color.BLACK);
-                g2.setStroke(new BasicStroke(2));
-                g2.drawLine(1400, 300, 1400, 350);
-            }
-
-            if (state >= 6) {
-                g.drawOval(1375, 350, 50, 50);
-
-            }
-            if (state >= 7) {
-                g.drawLine(1400, 400, 1400, 500);
-            }
-            if (state >= 8) {
-                g.drawLine(1400, 420, 1350, 480); //y1 begin arm y2 ende arm
-            }
-            if (state >= 9) {
-                g.drawLine(1400, 420, 1450, 480);
-            }
-            if (state >= 10) {
-                // Draw left leg
-                g.drawLine(1400, 500, 1350, 600);
-            }
-            if (state >= 11) {
-                // Draw right leg
-                g.drawLine(1400, 500, 1450, 600);
-            }
-            if (state == 12) {
-
-                // game over screen + "Sad Face"
-                setBackground(Color.BLACK);
-                g.setColor(Color.RED);
-                g.setFont(new Font("Consolas", Font.BOLD, 80));
-                g.drawString("GAME OVER", 600, 400);
-                g.setFont(new Font("Consolas", Font.BOLD, 30));
-                g.drawString("Better luck next time...", 600, 500);
-                g.setColor(Color.WHITE);
-                g.fillOval(1385, 365, 5, 5);
-                g.fillOval(1410, 365, 5, 5);
-                g.drawArc(1385, 375, 30, 20, 0, 180);
-                g.setFont(new Font("Consolas", Font.BOLD, 80));
-                g.setColor(Color.RED);
-                g.drawString("Hangman", 600, 100);
-
-// galgenmännchen nochmal in farbe als overlay das sichtbar da schwarz
-                g.setColor(Color.WHITE);
-                g.drawLine(1390, 340, 1400, 350);
-                g.drawLine(1400, 340, 1400, 350);
-                g.drawLine(1410, 340, 1400, 350);
-
-                //Galgenmenchen
-                g.drawOval(1375, 350, 50, 50);
-                g.drawLine(1400, 400, 1400, 500);
-                g.drawLine(1400, 420, 1350, 480);
-                g.drawLine(1400, 420, 1450, 480);
-                g.drawLine(1400, 500, 1350, 600);
-                g.drawLine(1400, 500, 1450, 600);
-
-
-            }
-            if (state >= 13) {
-                g2.drawLine(1200, 400, 1300, 300);
-                setBackground(Color.WHITE);
-                g.setColor(Color.GREEN);
-                g.setFont(new Font("Consolas", Font.BOLD, 80));
-                g.drawString("Hangman", 650, 100);
-                g.drawString("Richtig Geraten", 300, 400);
-                g.setFont(new Font("Consolas", Font.BOLD, 30));
-                g.drawString("Du hast das Wort " + "Lösung" + " richtig geraten", 300, 500); //
-                g.setColor(Color.BLACK);
-                g.fillOval(1385, 365, 5, 5);
-                g.fillOval(1410, 365, 5, 5);
-                g.drawArc(1385, 375, 30, 20, 0, -180);
-
-
-            }
-        }
-
-
-    }
 }
