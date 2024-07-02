@@ -63,6 +63,7 @@ public class Game {
             addToUsed();
         } else {
             tryWord(t);
+            addToUsed();
         }
 
 
