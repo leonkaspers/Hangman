@@ -124,7 +124,7 @@ public class NewGui extends JFrame implements ActionListener {
                 this.game = new Game(inputField.getText());
                 inputField.setText("");
             }
-
+            this.state = game.getState();
             inputField.setText(game.getWord());
 
         } else if (ae.getSource() == this.input && game != null) {
