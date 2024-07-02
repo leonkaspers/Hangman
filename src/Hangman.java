@@ -228,9 +228,7 @@ public class Hangman extends JFrame implements ActionListener {
             usedLetter.setText(this.game.getUsedOutputString());
         }
 
-        Graphics g = this.getGraphics();
         graphic.repaint();
-
 
         switch (this.state) {
             case 0: {
