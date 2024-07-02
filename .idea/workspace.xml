@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Draw panal hinzugefügt :)">
-      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui.java" afterDir="false" />
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="graphics work finally">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Words.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.GameTest.executor": "Run",
     "Application.HangmanGame.executor": "Run",
-    "Application.NewGui.executor": "Debug",
+    "Application.NewGui.executor": "Run",
     "Application.RandomWord.executor": "Run",
     "Application.RandomWordPrinter.executor": "Run",
     "Application.StickFigureDrawing.executor": "Run",
@@ -161,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719931640971</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="graphics work finally">
+      <option name="closed" value="true" />
+      <created>1719949600920</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719949600920</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,14 +197,15 @@
     <MESSAGE value="Tried to implement used letters but failed" />
     <MESSAGE value="Starting to create Main Panel and finished Layout" />
     <MESSAGE value="Draw panal hinzugefügt :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Draw panal hinzugefügt :)" />
+    <MESSAGE value="graphics work finally" />
+    <option name="LAST_COMMIT_MESSAGE" value="graphics work finally" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Game.java</url>
-          <line>113</line>
+          <line>111</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
