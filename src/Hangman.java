@@ -15,6 +15,7 @@ public class Hangman extends JFrame implements ActionListener {
     // UI components that need to be referenced later
     JPanel panel;
     JLabel usedLetter;
+    JLabel errorMessage;
     JTextField inputField;
     JTextArea output;
     JButton input;
@@ -72,6 +73,9 @@ public class Hangman extends JFrame implements ActionListener {
         JPanel usedPanel = new JPanel();
         JLabel usedLettersText = new JLabel("Benutze Buchstaben:");
         usedLetter = new JLabel();
+        errorMessage = new JLabel();
+        errorMessage.setVisible(false);
+        errorMessage.setForeground(Color.RED);
         usedPanel.add(usedLettersText);
         usedPanel.add(usedLetter);
 
