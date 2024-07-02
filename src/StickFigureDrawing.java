@@ -88,7 +88,7 @@ public class StickFigureDrawing extends JFrame {
     class DrawPanel extends JPanel //definiert das Fenster
     {
         @Override
-        protected void paintComponent(Graphics g) {
+        protected void paintComponent(Graphics g )  {
             super.paintComponent(g);
             drawAll(g);
 
