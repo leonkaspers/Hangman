@@ -1,14 +1,13 @@
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 public class Game {
 
     private final String word;
     private final char[] wordLetters;
+    private final LinkedList<String> used = new LinkedList<>();
     private int state;
     private char[] currentLetters;
-    private LinkedList<String> used = new LinkedList<>();
     private String currentLettersOutputString;
     private String usedOutputString = "";
     private String currentInput;
@@ -57,7 +56,6 @@ public class Game {
         currentInput = t;
         t = t.toLowerCase();
         if (t.length() == 0) {
-            return;
         } else if (t.length() == 1) {
             tryLetter(t.charAt(0));
             addToUsed();
