@@ -18,26 +18,29 @@ public class NewGui extends JFrame implements ActionListener {
     JButton reset;
     JLabel outputField;
     JButton help;
-    StickFigureDrawing.DrawPanel graphic;
+    DrawPanel graphic;
+
+
+    @Override
+    public int getState() {
+        return state;
+    }
 
     int state;
 
     Game game;
 
-    public NewGui() throws IOException {
-
+    public NewGui()  {
         //Creating the Frame
         JFrame frame = new JFrame("Hangman");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1600, 900);
 
         //creating Basic Layout
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        JPanel mainPanel = new JPanel(new BorderLayout());
 
         // Creating TOP Panel and Help Button
         JPanel header = new JPanel(new BorderLayout());
-        // JLabel title = new JLabel("HangmanAI");
         JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JLabel title = new JLabel("HangmanAI");
         centerPanel.add(title);
@@ -49,13 +52,13 @@ public class NewGui extends JFrame implements ActionListener {
         header.add(leftPanel, BorderLayout.WEST);
         header.add(centerPanel, BorderLayout.CENTER);
 
-        // Restrict the size of the header panel
-        header.setMaximumSize(new Dimension(1600, 40));
-
         // Creating live Panel
         JPanel live = new JPanel();
         outputField = new JLabel();
         live.add(outputField);
+
+        //creating Draw Panel
+        graphic = new DrawPanel(this);
 
         // Creating usedPanel
         JPanel usedPanel = new JPanel();
@@ -63,7 +66,6 @@ public class NewGui extends JFrame implements ActionListener {
         usedLetter = new JLabel();
         usedPanel.add(usedLettersText);
         usedPanel.add(usedLetter);
-
 
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
@@ -76,8 +78,6 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(input);
         panel.add(reset);
 
-
-
         // Add Action Listener
         input.addActionListener(this);
         reset.addActionListener(this);
@@ -87,12 +87,21 @@ public class NewGui extends JFrame implements ActionListener {
         output = new JTextArea();
         output.setEditable(false);
 
-// Adding components to main panel
-        mainPanel.add(header);
-        mainPanel.add(live);
-        mainPanel.add(output);
-        mainPanel.add(usedPanel);
-        mainPanel.add(panel);
+        // Creating north and south panels
+        JPanel northPanel = new JPanel();
+        northPanel.setLayout(new BoxLayout(northPanel, BoxLayout.Y_AXIS));
+        northPanel.add(header);
+        northPanel.add(live);
+
+        JPanel southPanel = new JPanel();
+        southPanel.setLayout(new BoxLayout(southPanel, BoxLayout.Y_AXIS));
+        southPanel.add(usedPanel);
+        southPanel.add(panel);
+
+        // Adding components to main panel
+        mainPanel.add(northPanel, BorderLayout.NORTH);
+        mainPanel.add(graphic, BorderLayout.CENTER);
+        mainPanel.add(southPanel, BorderLayout.SOUTH);
 
         //Adding Components to the frame.
         frame.add(mainPanel);
@@ -100,7 +109,6 @@ public class NewGui extends JFrame implements ActionListener {
 
         state = 0;
         updateGUI();
-
     }
 
     public static void main(String[] args) throws IOException {
@@ -116,7 +124,7 @@ public class NewGui extends JFrame implements ActionListener {
                 this.game = new Game(inputField.getText());
                 inputField.setText("");
             }
-            this.state = game.getState();
+
             inputField.setText(game.getWord());
 
         } else if (ae.getSource() == this.input && game != null) {
@@ -133,27 +141,31 @@ public class NewGui extends JFrame implements ActionListener {
         } else if (ae.getSource() == this.help) {
             // create new Textbox
             // TODO Hilfe schreiben und evlt. anderen Hilfe Button
-            JOptionPane.showMessageDialog(null, "Willkommen in der HamgmanAi Hilfezentrale\n" +
-                    "Hier die Spielregeln:\n" +
-                    "\n" +
-                    "Spielablauf:\n" +
-                    "\n" +
-                    "Buchstaben raten: Der Spieler, also DU, rät eine Reihe an Buchstaben um ein Verdecktes Wort zu erraten.\n" +
-                    "Die Rateversuche sind begrenzt.\n" +
-                    "\n" +
-                    "Richtiger Buchstaben: Wenn ein geratener Buchstabe im Wort vorkommt, schreibt das Spiel\n" +
-                    "diesen Buchstaben an die entsprechenden Stellen, die durch die Striche markiert sind.\n" +
-                    "\n" +
-                    "Falsche Buchstaben: Wird ein falscher Buchstabe genannt, der nicht im Wort vorkommt,\n" +
-                    "wird vom Spiel einen Teil zum Galgenmännchen hinzu.\n" +
-                    "Dies wie Folgt, Galgen, Strick, Kopf und Körper des Galgenmännchens was das Maximum\n" +
-                    "an Fehlversuchen ist erreicht, wenn das Männchen „gehängt“ ist.\n" +
-                    "\n" +
-                    "Gewinn: Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde \n" +
-                    "bevor das Galgenmännchen komplett gezeichnet ist.\n" +
-                    "\n" +
-                    "Niederlage: Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n"+
-                    "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden. ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Willkommen in der HamgmanAi Hilfezentrale\n" +
+                            "Hier die Spielregeln:\n" +
+                            "\n" +
+                            "Spielablauf:\n" +
+                            "\n" +
+                            "Buchstaben raten: Der Spieler, also DU, rät eine Reihe an Buchstaben um ein Verdecktes Wort zu erraten.\n" +
+                            "Die Rateversuche sind begrenzt.\n" +
+                            "\n" +
+                            "Richtiger Buchstaben: Wenn ein geratener Buchstabe im Wort vorkommt, schreibt das Spiel\n" +
+                            "diesen Buchstaben an die entsprechenden Stellen, die durch die Striche markiert sind.\n" +
+                            "\n" +
+                            "Falsche Buchstaben: Wird ein falscher Buchstabe genannt, der nicht im Wort vorkommt,\n" +
+                            "wird vom Spiel einen Teil zum Galgenmännchen hinzu.\n" +
+                            "Dies wie Folgt, Galgen, Strick, Kopf und Körper des Galgenmännchens was das Maximum\n" +
+                            "an Fehlversuchen ist erreicht, wenn das Männchen „gehängt“ ist.\n" +
+                            "\n" +
+                            "Gewinn: Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde \n" +
+                            "bevor das Galgenmännchen komplett gezeichnet ist.\n" +
+                            "\n" +
+                            "Niederlage: Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n" +
+                            "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden. ",
+                    "Hilfe",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
 
         updateGUI();
@@ -161,7 +173,14 @@ public class NewGui extends JFrame implements ActionListener {
 
     private void updateGUI() {
         if (!(this.game == null)) {
-        usedLetter.setText(this.game.getUsedOutputString()); }
+            usedLetter.setText(this.game.getUsedOutputString());
+        }
+
+        Graphics g = this.getGraphics();
+
+        if (!(g == null)) {
+            graphic.repaint();
+        }
 
         switch (this.state) {
             case 0: {
@@ -225,5 +244,4 @@ public class NewGui extends JFrame implements ActionListener {
 
 
 //Grafika teil Das Galgenmänchen
-
 
