@@ -57,11 +57,17 @@ public class NewGui extends JFrame implements ActionListener {
         outputField = new JLabel();
         live.add(outputField);
 
+        // Creating usedPanel
+        JPanel usedPanel = new JPanel();
+        JLabel usedLettersText = new JLabel("Benutze Buchstaben:");
+        usedLetter = new JLabel();
+        usedPanel.add(usedLettersText);
+        usedPanel.add(usedLetter);
+
+
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
-        JLabel usedLettersText = new JLabel("Benutze Buchstaben:");
-        usedLetter = new JLabel();
         inputField = new JTextField(15); // accepts upto 10 characters
         input = new JButton("Eingabe");
         reset = new JButton("Reset");   // Als Resetbutton
@@ -69,8 +75,7 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(inputField);
         panel.add(input);
         panel.add(reset);
-        panel.add(usedLettersText);
-        panel.add(usedLetter);
+
 
 
         // Add Action Listener
@@ -86,6 +91,7 @@ public class NewGui extends JFrame implements ActionListener {
         mainPanel.add(header);
         mainPanel.add(live);
         mainPanel.add(output);
+        mainPanel.add(usedPanel);
         mainPanel.add(panel);
 
         //Adding Components to the frame.
@@ -117,6 +123,7 @@ public class NewGui extends JFrame implements ActionListener {
             output.append("Eingabe" + inputField.getText() + "\n");
             game.tryInput(inputField.getText());
             output.append(game.getCurrentLetters() + "\n");
+            outputField.setText(game.getCurrentLetters());
             state = game.getState();
             inputField.setText("");
         } else if (ae.getSource() == this.reset) {
