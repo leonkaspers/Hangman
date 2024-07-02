@@ -75,7 +75,7 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(inputField);
         panel.add(input);
         panel.add(reset);
-
+        inputField.addActionListener(ae -> input.doClick());
 
 
         // Add Action Listener
@@ -117,7 +117,7 @@ public class NewGui extends JFrame implements ActionListener {
                 inputField.setText("");
             }
             this.state = game.getState();
-            inputField.setText(game.getWord());
+            output.append(game.getWord() + "\n");
 
         } else if (ae.getSource() == this.input && game != null) {
             output.append("Eingabe" + inputField.getText() + "\n");
@@ -129,6 +129,7 @@ public class NewGui extends JFrame implements ActionListener {
         } else if (ae.getSource() == this.reset) {
             this.game = null;
             state = 0;
+            output.setText("");  //setzt Textliste zurück
 
         } else if (ae.getSource() == this.help) {
             // create new Textbox
@@ -152,7 +153,7 @@ public class NewGui extends JFrame implements ActionListener {
                     "Gewinn: Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde \n" +
                     "bevor das Galgenmännchen komplett gezeichnet ist.\n" +
                     "\n" +
-                    "Niederlage: Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n"+
+                    "Niederlage: Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n" +
                     "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden. ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
         }
 
@@ -161,16 +162,19 @@ public class NewGui extends JFrame implements ActionListener {
 
     private void updateGUI() {
         if (!(this.game == null)) {
-        usedLetter.setText(this.game.getUsedOutputString()); }
+            usedLetter.setText(this.game.getUsedOutputString());
+        }
 
         switch (this.state) {
             case 0: {
                 output.append("Bitte Wort eingeben, leer lassen für random word");
                 input.setVisible(true);
+                input.setText("Spiel Starten");
                 break;
             }
             case 1: {
                 output.append("Noch 10 Versuche\n");
+                input.setText("Eingabe");
                 break;
             }
             case 2: {
@@ -221,9 +225,8 @@ public class NewGui extends JFrame implements ActionListener {
             }
         }
     }
+
 }
 
-
-//Grafika teil Das Galgenmänchen
 
 
