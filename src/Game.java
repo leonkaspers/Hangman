@@ -14,6 +14,7 @@ public class Game {
 
     // The current game state
     private int state;
+    private boolean active = true;
 
     // the current letters entered by the player which were correct
     private char[] currentLetters;
@@ -89,6 +90,8 @@ public class Game {
      * @param t The input given by the player.
      */
     public void tryInput(String t) {
+
+        if (!active) { return;}
 
         // safe input with correct casing still intact
         currentInput = t;
@@ -168,6 +171,11 @@ public class Game {
      */
     private void wrongInput() {
         this.state = state + 1;
+
+        // checks for game over
+        if (state == 12) {
+            active = false;
+        }
     }
 
     /**
@@ -176,6 +184,7 @@ public class Game {
     private void win() {
         this.state = 13;
         this.currentLetters = this.wordLetters;
+        active = false;
     }
 
 

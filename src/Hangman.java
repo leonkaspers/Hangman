@@ -175,7 +175,37 @@ public class Hangman extends JFrame implements ActionListener {
             // create new Textbox
             // TODO Hilfe schreiben und evlt. anderen Hilfe Button
 
-            JOptionPane.showMessageDialog(null, "Willkommen in der HamgmanAi Hilfezentrale\n\n" + "Hier die Spielregeln:\n" + "\n" + "Spielablauf:\n" + "\n" + "Buchstaben raten:\n" + "Der Spieler, also DU, rät eine Reihe an Buchstaben um ein Verdecktes Wort zu erraten.\n" + "Die Rateversuche sind begrenzt. Die eingabe erfolgt über Button on screen oder Enter\n" + "\n" + "Richtiger Buchstaben: \n" + "Wenn ein geratener Buchstabe im Wort vorkommt, schreibt das Spiel\n" + "diesen Buchstaben an die entsprechenden Stellen, die durch die Striche markiert sind.\n" + "\n" + "Falsche Buchstaben: \n" + "Wird ein falscher Buchstabe genannt, der nicht im Wort vorkommt,\n" + "wird vom Spiel einen Teil zum Galgenmännchen hinzugefügt.\n" + "Dies wie Folgt, Galgen, Strick, Kopf und Körper des Galgenmännchens, das Maximum\n" + "an Fehlversuchen ist erreicht, wenn das Männchen „gehängt“ ist.\n" + "\n" + "Gewinn: \n" + "Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde \n" + "bevor das Galgenmännchen komplett gezeichnet ist.\n" + "\n" + "Niederlage: \n" + "Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n" + "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden.\n\n\n ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, """
+                    Willkommen in der HamgmanAi Hilfezentrale
+
+                    Hier die Spielregeln:
+
+                    Spielablauf:
+
+                    Buchstaben raten:
+                    Der Spieler, also DU, rät eine Reihe an Buchstaben um ein Verdecktes Wort zu erraten.
+                    Die Rateversuche sind begrenzt. Die eingabe erfolgt über Button on screen oder Enter
+
+                    Richtiger Buchstaben:\s
+                    Wenn ein geratener Buchstabe im Wort vorkommt, schreibt das Spiel
+                    diesen Buchstaben an die entsprechenden Stellen, die durch die Striche markiert sind.
+
+                    Falsche Buchstaben:\s
+                    Wird ein falscher Buchstabe genannt, der nicht im Wort vorkommt,
+                    wird vom Spiel einen Teil zum Galgenmännchen hinzugefügt.
+                    Dies wie Folgt, Galgen, Strick, Kopf und Körper des Galgenmännchens, das Maximum
+                    an Fehlversuchen ist erreicht, wenn das Männchen „gehängt“ ist.
+
+                    Gewinn:\s
+                    Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde\s
+                    bevor das Galgenmännchen komplett gezeichnet ist.
+
+                    Niederlage:\s
+                    Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,
+                    gilt das Spiel als verloren und ein neues Spiel kann begonnen werden.
+
+
+                    \s""", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
         }
 
         // update GUI after the changed
@@ -190,7 +220,6 @@ public class Hangman extends JFrame implements ActionListener {
             usedLetter.setText(this.game.getUsedOutputString());
         }
 
-        Graphics g = this.getGraphics();
         graphic.repaint();
 
 
