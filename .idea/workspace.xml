@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Draw panal hinzugefügt :)" />
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Buggy grahics work" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,31 +37,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.GameTest.executor": "Run",
-    "Application.HangmanGame.executor": "Run",
-    "Application.NewGui.executor": "Run",
-    "Application.RandomWord.executor": "Run",
-    "Application.RandomWordPrinter.executor": "Run",
-    "Application.StickFigureDrawing.executor": "Run",
-    "Application.TextFieldExample.executor": "Run",
-    "Application.gameStarten.executor": "Run",
-    "Application.temp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.GameTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HangmanGame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NewGui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RandomWord.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RandomWordPrinter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StickFigureDrawing.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TextFieldExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.gameStarten.executor&quot;: &quot;Run&quot;,
+    &quot;Application.temp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Add-Graphic&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="NewGui" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="NewGui" />
@@ -157,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719931640971</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Buggy grahics work">
+      <option name="closed" value="true" />
+      <created>1719947224812</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719947224812</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +192,8 @@
     <MESSAGE value="Tried to implement used letters but failed" />
     <MESSAGE value="Starting to create Main Panel and finished Layout" />
     <MESSAGE value="Draw panal hinzugefügt :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Draw panal hinzugefügt :)" />
+    <MESSAGE value="Buggy grahics work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buggy grahics work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
