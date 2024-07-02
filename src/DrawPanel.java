@@ -6,7 +6,7 @@ public class DrawPanel extends JPanel  {
 
     private int state;
 
-    public DrawPanel(){
+    public DrawPanal(){
         this.state = 0;
     }
 

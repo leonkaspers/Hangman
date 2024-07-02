@@ -68,13 +68,12 @@ public class NewGui extends JFrame implements ActionListener {
         label = new JLabel("Enter Text");
         inputField = new JTextField(15); // accepts upto 10 characters
         input = new JButton("Eingabe");
-        reset = new JButton("Reset");   // Als Resetbutton
+        reset = new JButton("Neu Starten");   // Als Resetbutton
         panel.add(label); // Components Added using Flow Layout
         panel.add(inputField);
         panel.add(input);
         panel.add(reset);
         inputField.addActionListener(ae -> input.doClick());
-
 
         // Add Action Listener
         input.addActionListener(this);
@@ -164,7 +163,6 @@ public class NewGui extends JFrame implements ActionListener {
     private void updateGUI() {
         if (!(this.game == null)) {
         usedLetter.setText(this.game.getUsedOutputString()); }
-
 
         switch (this.state) {
             case 0: {
