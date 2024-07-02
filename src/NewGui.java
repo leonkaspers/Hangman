@@ -108,7 +108,7 @@ public class NewGui extends JFrame implements ActionListener {
                 this.game = new Game(inputField.getText());
                 inputField.setText("");
             }
-
+            this.state = game.getState();
             output.append(game.getWord() + "\n");
 
         } else if (ae.getSource() == this.input && game != null) {
@@ -158,10 +158,12 @@ public class NewGui extends JFrame implements ActionListener {
             case 0: {
                 output.append("Bitte Wort eingeben, leer lassen für random word");
                 input.setVisible(true);
+                input.setText("Spiel Starten");
                 break;
             }
             case 1: {
                 output.append("Noch 10 Versuche\n");
+                input.setText("Eingabe");
                 break;
             }
             case 2: {
