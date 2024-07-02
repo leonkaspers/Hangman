@@ -179,24 +179,24 @@ public class StickFigureDrawing extends JFrame {
                 g.drawLine(1400, 500, 1350, 600);
                 g.drawLine(1400, 500, 1450, 600);
 
-
+//TODO Galgenmännchen auf den Boden der Tatsachen stellen wenn richtig :)
 
 
         }if (step >= 13)
 
         {
-            g2.drawLine(1200, 400, 1300, 300);
-            setBackground(Color.WHITE);
-            g.setColor(Color.GREEN);
-            g.setFont(new Font("Consolas", Font.BOLD, 80));
-            g.drawString("Hangman", 650, 100);
-            g.drawString("Richtig Geraten", 300, 400);
-            g.setFont(new Font("Consolas", Font.BOLD, 30));
-            g.drawString("Du hast das Wort "+"Lösung" +" richtig geraten", 300, 500); //
-            g.setColor(Color.BLACK);
-            g.fillOval(1385, 365, 5, 5);
-            g.fillOval(1410, 365, 5, 5);
-            g.drawArc(1385, 375, 30, 20, 0, -180);
+                g2.drawLine(1200, 400, 1300, 300);
+                setBackground(Color.WHITE);
+                g.setColor(Color.GREEN);
+                g.setFont(new Font("Consolas", Font.BOLD, 80));
+                g.drawString("Hangman", 650, 100);
+                g.drawString("Richtig Geraten", 300, 400);
+                g.setFont(new Font("Consolas", Font.BOLD, 30));
+                g.drawString("Du hast das Wort "+"Lösung" +" richtig geraten", 300, 500); //
+                g.setColor(Color.BLACK);
+                g.fillOval(1385, 365, 5, 5);
+                g.fillOval(1410, 365, 5, 5);
+                g.drawArc(1385, 375, 30, 20, 0, -180);
 
 
         }
