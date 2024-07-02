@@ -75,6 +75,7 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(inputField);
         panel.add(input);
         panel.add(reset);
+        inputField.addActionListener(ae -> input.doClick());
 
 
 
@@ -129,6 +130,7 @@ public class NewGui extends JFrame implements ActionListener {
         } else if (ae.getSource() == this.reset) {
             this.game = null;
             state = 0;
+            output.setText("");  //setzt Textliste zurück
 
         } else if (ae.getSource() == this.help) {
             // create new Textbox
@@ -234,6 +236,10 @@ public class NewGui extends JFrame implements ActionListener {
 
         }
 
+
+
+
+        //in neue klasse?! Konstruktor geben damit der andere code bei den cases daruf zugreiffen und deise übernehmen kann
         private void drawAll(Graphics g) //
         {
             g.setColor(new Color(0, 255, 0));
