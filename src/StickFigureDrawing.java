@@ -37,14 +37,16 @@ public class StickFigureDrawing extends JFrame {
                                          @Override
                                          public void actionPerformed(ActionEvent e) {
                                              step++;
-                                             if (step==12||step==13) {
-                                                 restartButton.setVisible(true);}
+                                             if (step == 12 || step == 13) {
+                                                 restartButton.setVisible(true);
+                                             }
                                              drawPanel.repaint();
                                              // if (step>=1)
                                              // {nextButton.setVisible(false);}
                                              //zum durchtesten:
-                                             if (step>=0)
-                                             {nextButton.setVisible(true);}
+                                             if (step >= 0) {
+                                                 nextButton.setVisible(true);
+                                             }
 
                                          }
                                      }
@@ -81,8 +83,8 @@ public class StickFigureDrawing extends JFrame {
         add(bottomPanel, BorderLayout.SOUTH);
 
 
-
     }
+
     class DrawPanel extends JPanel //definiert das Fenster
     {
         @Override

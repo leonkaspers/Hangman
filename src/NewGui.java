@@ -1,10 +1,7 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 
@@ -13,12 +10,15 @@ import java.io.IOException;
 public class NewGui extends JFrame implements ActionListener {
 
     JPanel panel;
-    JLabel label;
+    JLabel label; // static machen
     JLabel usedLetter;
-    JTextField textfield;
+    JTextField inputField;
     JTextArea output;
     JButton input;
     JButton reset;
+    JLabel outputField;
+    JButton help;
+    StickFigureDrawing.DrawPanel graphic;
 
     int state;
 
@@ -39,15 +39,16 @@ public class NewGui extends JFrame implements ActionListener {
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
         usedLetter = new JLabel("Benutze Buchstaben:");
-        textfield = new JTextField(15); // accepts upto 10 characters
+        inputField = new JTextField(15); // accepts upto 10 characters
         input = new JButton("Eingabe");
         reset = new JButton("Reset");   // Als Resetbutton
         panel.add(label); // Components Added using Flow Layout
-        panel.add(textfield);
+        panel.add(inputField);
         panel.add(input);
         panel.add(reset);
 
         // Creating TOP Panel and Help Button
+
 
         // Add Action Listener
         input.addActionListener(this);
@@ -75,22 +76,22 @@ public class NewGui extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == this.input && game == null) {
-            if (textfield.getText().isEmpty()) {
+            if (inputField.getText().isEmpty()) {
                 this.game = new Game();
             } else {
-                this.game = new Game(textfield.getText());
-                textfield.setText("");
+                this.game = new Game(inputField.getText());
+                inputField.setText("");
             }
 
             output.append(game.getWord());
 
         } else if (ae.getSource() == this.input && game != null) {
-            output.append("Eingabe" + textfield.getText() + "\n");
-            game.tryInput(textfield.getText());
+            output.append("Eingabe" + inputField.getText() + "\n");
+            game.tryInput(inputField.getText());
             output.append(game.getCurrentLettersOutputString() + "\n");
             state = game.getState();
             updateGUI();
-            textfield.setText("");
+            inputField.setText("");
         } else if (ae.getSource() == this.reset) {
             this.game = null;
             state = 0;

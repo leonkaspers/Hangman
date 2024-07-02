@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Changes zurückgenommen">
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Starting to create Main Panel and finished Layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StickFigureDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StickFigureDrawing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +94,7 @@
       <workItem from="1718886064606" duration="877000" />
       <workItem from="1719658515713" duration="1250000" />
       <workItem from="1719775304138" duration="27000" />
+      <workItem from="1719927234614" duration="1518000" />
     </task>
     <task id="LOCAL-00001" summary="Added tryInput, tryLetter, and correctLetter methods">
       <option name="closed" value="true" />
@@ -141,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719692576192</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Starting to create Main Panel and finished Layout">
+      <option name="closed" value="true" />
+      <created>1719927627749</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719927627749</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +177,8 @@
     <MESSAGE value="&quot;Finnished Game Methods&quot;" />
     <MESSAGE value="Basix Text Based Game finished" />
     <MESSAGE value="Tried to implement used letters but failed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tried to implement used letters but failed" />
+    <MESSAGE value="Starting to create Main Panel and finished Layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting to create Main Panel and finished Layout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
