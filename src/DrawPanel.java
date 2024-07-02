@@ -3,6 +3,10 @@ import java.awt.*;
 
 class DrawPanel extends JPanel //definiert das Fenster
 {
+    public void setGui(NewGui gui) {
+        this.gui = gui;
+    }
+
     NewGui gui;
 
     public DrawPanel(NewGui gui) {
