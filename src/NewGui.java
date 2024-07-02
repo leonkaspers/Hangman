@@ -60,7 +60,8 @@ public class NewGui extends JFrame implements ActionListener {
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
-        usedLetter = new JLabel("Benutze Buchstaben:");
+        JLabel usedLettersText = new JLabel("Benutze Buchstaben:");
+        usedLetter = new JLabel();
         inputField = new JTextField(15); // accepts upto 10 characters
         input = new JButton("Eingabe");
         reset = new JButton("Reset");   // Als Resetbutton
@@ -68,6 +69,7 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(inputField);
         panel.add(input);
         panel.add(reset);
+        panel.add(usedLettersText);
         panel.add(usedLetter);
 
 
