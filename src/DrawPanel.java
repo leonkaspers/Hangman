@@ -23,15 +23,13 @@ class DrawPanel extends JPanel //definiert das Fenster
 
     private void drawAll(Graphics g) //
     {
-        int state = gui.getState();
+        int state = gui.getState() + 1;
 
         g.setColor(new Color(0, 255, 0));
         g.fillArc(1000, 700, 400, 700, 5, 180); // Shifted to the right bottom
 
         if (state <= 11) {
             g.setFont(new Font("Consolas", Font.BOLD, 80));
-            g.drawString("Hangman", 650, 100);
-            g.drawString("Lösung", 200, 400);
 
         }
 

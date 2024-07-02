@@ -21,24 +21,26 @@ public class NewGui extends JFrame implements ActionListener {
     DrawPanel graphic;
 
 
+    @Override
+    public int getState() {
+        return state;
+    }
+
     int state;
 
     Game game;
 
-    public NewGui() throws IOException {
-
+    public NewGui()  {
         //Creating the Frame
         JFrame frame = new JFrame("Hangman");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1600, 900);
 
         //creating Basic Layout
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        JPanel mainPanel = new JPanel(new BorderLayout());
 
         // Creating TOP Panel and Help Button
         JPanel header = new JPanel(new BorderLayout());
-        // JLabel title = new JLabel("HangmanAI");
         JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JLabel title = new JLabel("HangmanAI");
         centerPanel.add(title);
@@ -49,9 +51,6 @@ public class NewGui extends JFrame implements ActionListener {
 
         header.add(leftPanel, BorderLayout.WEST);
         header.add(centerPanel, BorderLayout.CENTER);
-
-        // Restrict the size of the header panel
-        header.setMaximumSize(new Dimension(1600, 40));
 
         // Creating live Panel
         JPanel live = new JPanel();
@@ -68,7 +67,6 @@ public class NewGui extends JFrame implements ActionListener {
         usedPanel.add(usedLettersText);
         usedPanel.add(usedLetter);
 
-
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
@@ -80,7 +78,6 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(input);
         panel.add(reset);
 
-
         // Add Action Listener
         input.addActionListener(this);
         reset.addActionListener(this);
@@ -90,12 +87,21 @@ public class NewGui extends JFrame implements ActionListener {
         output = new JTextArea();
         output.setEditable(false);
 
-// Adding components to main panel
-        mainPanel.add(header);
-        mainPanel.add(live);
-        mainPanel.add(graphic);
-        mainPanel.add(usedPanel);
-        mainPanel.add(panel);
+        // Creating north and south panels
+        JPanel northPanel = new JPanel();
+        northPanel.setLayout(new BoxLayout(northPanel, BoxLayout.Y_AXIS));
+        northPanel.add(header);
+        northPanel.add(live);
+
+        JPanel southPanel = new JPanel();
+        southPanel.setLayout(new BoxLayout(southPanel, BoxLayout.Y_AXIS));
+        southPanel.add(usedPanel);
+        southPanel.add(panel);
+
+        // Adding components to main panel
+        mainPanel.add(northPanel, BorderLayout.NORTH);
+        mainPanel.add(graphic, BorderLayout.CENTER);
+        mainPanel.add(southPanel, BorderLayout.SOUTH);
 
         //Adding Components to the frame.
         frame.add(mainPanel);
@@ -103,7 +109,6 @@ public class NewGui extends JFrame implements ActionListener {
 
         state = 0;
         updateGUI();
-
     }
 
     public static void main(String[] args) throws IOException {
@@ -120,7 +125,7 @@ public class NewGui extends JFrame implements ActionListener {
                 inputField.setText("");
             }
 
-            output.append(game.getWord() + "\n");
+            inputField.setText(game.getWord());
 
         } else if (ae.getSource() == this.input && game != null) {
             output.append("Eingabe" + inputField.getText() + "\n");
@@ -174,7 +179,7 @@ public class NewGui extends JFrame implements ActionListener {
         Graphics g = this.getGraphics();
 
         if (!(g == null)) {
-            graphic.paintComponent(g);
+            graphic.repaint();
         }
 
         switch (this.state) {
