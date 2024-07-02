@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Starting to create Main Panel and finished Layout">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StickFigureDrawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StickFigureDrawing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,31 +39,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.GameTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HangmanGame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.NewGui.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RandomWord.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RandomWordPrinter.executor&quot;: &quot;Run&quot;,
-    &quot;Application.StickFigureDrawing.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TextFieldExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.gameStarten.executor&quot;: &quot;Run&quot;,
-    &quot;Application.temp.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;game&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.GameTest.executor": "Run",
+    "Application.HangmanGame.executor": "Run",
+    "Application.NewGui.executor": "Run",
+    "Application.RandomWord.executor": "Run",
+    "Application.RandomWordPrinter.executor": "Run",
+    "Application.StickFigureDrawing.executor": "Run",
+    "Application.TextFieldExample.executor": "Run",
+    "Application.gameStarten.executor": "Run",
+    "Application.temp.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "New-GUI",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="NewGui" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="NewGui" />
@@ -95,6 +93,7 @@
       <workItem from="1719658515713" duration="1250000" />
       <workItem from="1719775304138" duration="27000" />
       <workItem from="1719927234614" duration="1518000" />
+      <workItem from="1719930657721" duration="663000" />
     </task>
     <task id="LOCAL-00001" summary="Added tryInput, tryLetter, and correctLetter methods">
       <option name="closed" value="true" />
