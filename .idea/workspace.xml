@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Basix Text Based Game finished">
-      <change afterPath="$PROJECT_DIR$/src/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui.java" afterDir="false" />
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="Changes zurückgenommen">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,31 +39,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.GameTest.executor": "Run",
-    "Application.HangmanGame.executor": "Run",
-    "Application.NewGui.executor": "Run",
-    "Application.RandomWord.executor": "Run",
-    "Application.RandomWordPrinter.executor": "Run",
-    "Application.StickFigureDrawing.executor": "Run",
-    "Application.TextFieldExample.executor": "Run",
-    "Application.gameStarten.executor": "Run",
-    "Application.temp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "game",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/DasIstMeinGedudel/IdeaProjects/Hangman",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.GameTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HangmanGame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NewGui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RandomWord.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RandomWordPrinter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StickFigureDrawing.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TextFieldExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.gameStarten.executor&quot;: &quot;Run&quot;,
+    &quot;Application.temp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;game&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="NewGui" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="NewGui" />
@@ -93,6 +91,7 @@
       <updated>1718886063393</updated>
       <workItem from="1718886064606" duration="877000" />
       <workItem from="1719658515713" duration="1250000" />
+      <workItem from="1719775304138" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="Added tryInput, tryLetter, and correctLetter methods">
       <option name="closed" value="true" />
@@ -134,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719688887616</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Tried to implement used letters but failed">
+      <option name="closed" value="true" />
+      <created>1719692576192</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719692576192</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,14 +165,15 @@
     <MESSAGE value="First draft of Game class and added Game Test Class" />
     <MESSAGE value="&quot;Finnished Game Methods&quot;" />
     <MESSAGE value="Basix Text Based Game finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basix Text Based Game finished" />
+    <MESSAGE value="Tried to implement used letters but failed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried to implement used letters but failed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Game.java</url>
-          <line>108</line>
+          <line>113</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

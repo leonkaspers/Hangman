@@ -31,6 +31,10 @@ public class NewGui extends JFrame implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1600, 900);
 
+        //creating Basic Layout
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+
         //Creating the panel at bottom and adding components
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
@@ -42,6 +46,8 @@ public class NewGui extends JFrame implements ActionListener {
         panel.add(textfield);
         panel.add(input);
         panel.add(reset);
+
+        // Creating TOP Panel and Help Button
 
         // Add Action Listener
         input.addActionListener(this);
