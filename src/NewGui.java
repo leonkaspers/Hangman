@@ -116,12 +116,10 @@ public class NewGui extends JFrame implements ActionListener {
             game.tryInput(inputField.getText());
             output.append(game.getCurrentLetters() + "\n");
             state = game.getState();
-            updateGUI();
             inputField.setText("");
         } else if (ae.getSource() == this.reset) {
             this.game = null;
             state = 0;
-            updateGUI();
 
         } else if (ae.getSource() == this.help) {
             // create new Textbox
@@ -148,6 +146,8 @@ public class NewGui extends JFrame implements ActionListener {
                     "Niederlage: Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n"+
                     "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden. ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
         }
+
+        updateGUI();
     }
 
     private void updateGUI() {
