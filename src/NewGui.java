@@ -36,11 +36,21 @@ public class NewGui extends JFrame implements ActionListener {
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
         // Creating TOP Panel and Help Button
-        JPanel header = new JPanel();
+        JPanel header = new JPanel(new BorderLayout());
+        // JLabel title = new JLabel("HangmanAI");
+        JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JLabel title = new JLabel("HangmanAI");
+        centerPanel.add(title);
+
+        JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         help = new JButton("Help");
-        header.add(title);
-        header.add(help);
+        leftPanel.add(help);
+
+        header.add(leftPanel, BorderLayout.WEST);
+        header.add(centerPanel, BorderLayout.CENTER);
+
+        // Restrict the size of the header panel
+        header.setMaximumSize(new Dimension(1600, 40));
 
         // Creating live Panel
         JPanel live = new JPanel();
@@ -115,7 +125,27 @@ public class NewGui extends JFrame implements ActionListener {
         } else if (ae.getSource() == this.help) {
             // create new Textbox
             // TODO Hilfe schreiben und evlt. anderen Hilfe Button
-            JOptionPane.showMessageDialog(null, "hier könnte ihre Hilfe stehen", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Willkommen in der HamgmanAi Hilfezentrale\n" +
+                    "Hier die Spielregeln:\n" +
+                    "\n" +
+                    "Spielablauf:\n" +
+                    "\n" +
+                    "Buchstaben raten: Der Spieler, also DU, rät eine Reihe an Buchstaben um ein Verdecktes Wort zu erraten.\n" +
+                    "Die Rateversuche sind begrenzt.\n" +
+                    "\n" +
+                    "Richtiger Buchstaben: Wenn ein geratener Buchstabe im Wort vorkommt, schreibt das Spiel\n" +
+                    "diesen Buchstaben an die entsprechenden Stellen, die durch die Striche markiert sind.\n" +
+                    "\n" +
+                    "Falsche Buchstaben: Wird ein falscher Buchstabe genannt, der nicht im Wort vorkommt,\n" +
+                    "wird vom Spiel einen Teil zum Galgenmännchen hinzu.\n" +
+                    "Dies wie Folgt, Galgen, Strick, Kopf und Körper des Galgenmännchens was das Maximum\n" +
+                    "an Fehlversuchen ist erreicht, wenn das Männchen „gehängt“ ist.\n" +
+                    "\n" +
+                    "Gewinn: Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde \n" +
+                    "bevor das Galgenmännchen komplett gezeichnet ist.\n" +
+                    "\n" +
+                    "Niederlage: Kann das Wort nicht vor Vervollständigung des Galgenmännchens erraten werden,\n"+
+                    "gilt das Spiel als verloren und ein neues Spiel kann begonnen werden. ", "Hilfe", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
