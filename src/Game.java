@@ -3,16 +3,32 @@ import java.util.LinkedList;
 
 public class Game {
 
+    // Fields
+
+    // The current play word and its char Array representation
     private final String word;
     private final char[] wordLetters;
+
+    // A list of the already used words and the string generated from that list
     private final LinkedList<String> used = new LinkedList<>();
+    private String usedOutputString = "";
+
+    // The current game state
     private int state;
+
+    // the current letters entered by the player which were correct
     private char[] currentLetters;
     private String currentLettersOutputString;
-    private String usedOutputString = "";
+
+    // saves the current input entered in the try Method
     private String currentInput;
 
-    // Konstruktor für Random Word
+
+    // Constructors
+
+    /**
+     * Constructor for a game with a random word.
+     */
     public Game() {
         this.state = 1;
         this.word = Words.getRandomWord();
@@ -21,7 +37,11 @@ public class Game {
         generateNewOutputString();
     }
 
-    // Konstruktor für benutzerdefiniertes Word
+    /**
+     * Constructor for a game with a user-defined word.
+     *
+     * @param string The word to be guessed in the game.
+     */
     public Game(String string) {
         this.state = 1;
         this.word = string;
@@ -29,78 +49,115 @@ public class Game {
         this.currentLetters = new char[this.word.length()];
     }
 
+
+    // Getter and Setter
+
+    /**
+     * @return The string representation of the used letters.
+     */
     public String getUsedOutputString() {
         usedOutputString = used.toString();
         return usedOutputString;
     }
 
+    /**
+     * @return The current state of the game.
+     */
     public int getState() {
         return state;
     }
 
+    /**
+     * @return The word to be guessed in the game (for debug purposes only)
+     */
     public String getWord() {
         return word;
     }
 
+    /**
+     * @return The current letters guessed by the player.
+     */
     public String getCurrentLetters() {
         generateNewOutputString();
         return currentLettersOutputString;
     }
 
-    public void setCurrentLettersOutputString(String currentLettersOutputString) {
-        this.currentLettersOutputString = currentLettersOutputString;
-    }
 
+    // Try Algorithm
 
+    /**
+     * Tries the input given by the player.
+     *
+     * @param t The input given by the player.
+     */
     public void tryInput(String t) {
+
+        // safe input with correct casing still intact
         currentInput = t;
+
+        // set input to lower case to ease all future operations
         t = t.toLowerCase();
-        if (t.length() == 0) {
+
+        // decide if input is letter or word
+        if (t.isEmpty()) {
+            return;
         } else if (t.length() == 1) {
             tryLetter(t.charAt(0));
-            addToUsed();
         } else {
             tryWord(t);
-            addToUsed();
         }
 
-
+        // add the input to the used list
+        addToUsed();
     }
 
-
-    //Letter Code
-
+    /**
+     * Tries a letter in the word.
+     *
+     * @param c The letter to be tried.
+     */
     private void tryLetter(char c) {
-        for (int i = 0; i < this.wordLetters.length; i++) {
-            if (c == Character.toLowerCase(this.wordLetters[i])) {
 
+        // search the game word for the given letter, proceed based on finding
+        for (char wordLetter : this.wordLetters) {
+            if (c == Character.toLowerCase(wordLetter)) {
                 correctLetter(c);
                 return;
             }
         }
 
+        // if the letter was not found
         wrongInput();
     }
 
-    //updates currenLetters Array and GUI if letter correct
+    /**
+     * Updates currentLetters Array if letter is correct.
+     *
+     * @param c The correct letter.
+     */
     private void correctLetter(char c) {
+
+        // for every instance of the letter in the game word replace the blank in the current letter array with the correct letter
         for (int i = 0; i < this.wordLetters.length; i++) {
             if (c == Character.toLowerCase(this.wordLetters[i])) {
                 this.currentLetters[i] = this.wordLetters[i];
             }
         }
 
+        // check if the game is won
         if (Arrays.equals(this.wordLetters, this.currentLetters)) {
             win();
         }
-
-        // Update GUI TODO
     }
 
-
-    // Word Code
-
+    /**
+     * Tries a word in the game.
+     *
+     * @param w The word to be tried.
+     */
     private void tryWord(String w) {
+
+        // checks if the given word is the correct word
         if (w.equals(this.word.toLowerCase())) {
             win();
         } else {
@@ -108,25 +165,27 @@ public class Game {
         }
     }
 
-
-    //updates GUI if letter incorrect
+    /**
+     * Updates game state if letter is incorrect.
+     */
     private void wrongInput() {
         this.state = state + 1;
     }
 
+    /**
+     * Sets the game to a win state.
+     */
     private void win() {
-        this.state = 12;
+        this.state = 13;
         this.currentLetters = this.wordLetters;
-    }
-
-    private void addToUsed() {
-        if (!this.used.contains(currentInput)) {
-            used.add(currentInput);
-        }
     }
 
 
     //Hilsfunktionen
+
+    /**
+     * Generates a new output string for the current letters.
+     */
     private void generateNewOutputString() {
         String s = "";
         for (int i = 0; i < this.currentLetters.length; i++) {
@@ -135,12 +194,18 @@ public class Game {
             } else {
                 s = s + currentLetters[i];
             }
-
             s = s + " ";
-
         }
-
         this.currentLettersOutputString = s;
+    }
+
+    /**
+     * Adds the current input to the used letters.
+     */
+    private void addToUsed() {
+        if (!this.used.contains(currentInput)) {
+            used.add(currentInput);
+        }
     }
 
 }
