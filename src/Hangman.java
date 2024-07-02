@@ -29,9 +29,6 @@ public class Hangman extends JFrame implements ActionListener {
     // the instance of a game
     Game game;
 
-
-    // Constructor
-
     /**
      * Constructor for NewGui class.
      * It initializes the GUI components and sets up the layout.
@@ -124,9 +121,9 @@ public class Hangman extends JFrame implements ActionListener {
     }
 
 
-
     /**
      * Main method to start the application.
+     *
      * @param args command line arguments
      */
     public static void main(String[] args) {
@@ -134,11 +131,22 @@ public class Hangman extends JFrame implements ActionListener {
         // gui.setVisible(true);   Macht neues Extra fenster auf XD
     }
 
+    /**
+     * Returns the current state of the game.
+     *
+     * @return the current state of the game
+     */
+    @Override
+    public int getState() {
+        return state;
+    }
+
 
     // Action and GUI operations
 
     /**
      * Handles the action events from the GUI components.
+     *
      * @param ae the action event
      */
     public void actionPerformed(ActionEvent ae) {
@@ -220,6 +228,7 @@ public class Hangman extends JFrame implements ActionListener {
             usedLetter.setText(this.game.getUsedOutputString());
         }
 
+        Graphics g = this.getGraphics();
         graphic.repaint();
 
 

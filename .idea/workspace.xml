@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="fixed intellij problems and accidently added a bug">
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="added active state">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hangman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +31,7 @@
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -46,7 +48,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.GameTest.executor": "Run",
-    "Application.Hangman.executor": "Run",
+    "Application.Hangman.executor": "Debug",
     "Application.HangmanGame.executor": "Run",
     "Application.NewGui.executor": "Run",
     "Application.RandomWord.executor": "Run",
@@ -68,8 +70,22 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\leonk\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
+        <option name="reportGuid" value="47833905-4794-4580-8429-d4b8fb466be7" />
+        <option name="reportName" value="Hangman/qodana/2024-07-02" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
   <component name="QodanaIsSelectedPersistenceService">
     <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\leonk\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="47833905-4794-4580-8429-d4b8fb466be7" reportId="Hangman/qodana/2024-07-02" />
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Hangman" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -223,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719956271609</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added active state">
+      <option name="closed" value="true" />
+      <created>1719956882919</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1719956882919</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,20 +283,21 @@
     <MESSAGE value="renamed and deleted old files" />
     <MESSAGE value="made useless field static" />
     <MESSAGE value="fixed intellij problems and accidently added a bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed intellij problems and accidently added a bug" />
+    <MESSAGE value="added active state" />
+    <option name="LAST_COMMIT_MESSAGE" value="added active state" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Game.java</url>
-          <line>165</line>
+          <line>168</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DrawPanel.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="4" />
+          <line>35</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
