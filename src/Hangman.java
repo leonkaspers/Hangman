@@ -193,6 +193,7 @@ public class Hangman extends JFrame implements ActionListener {
                 }
             }
 
+            outputField.setText(game.getCurrentLetters());
             state = game.getState();
             inputField.setText("");
 
