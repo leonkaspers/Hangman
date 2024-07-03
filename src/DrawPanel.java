@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
+
 class DrawPanel extends JPanel //definiert das Fenster
 {
     Hangman gui;
@@ -76,19 +77,38 @@ class DrawPanel extends JPanel //definiert das Fenster
             // game over screen + "Sad Face"
             setBackground(Color.BLACK);
             g.setColor(Color.RED);
+
+            //eckdaten Zu GAME OVER SCREEN
             g.setFont(new Font("Consolas", Font.BOLD, 80));
-            g.drawString("GAME OVER", 600, 400);
-            g.setFont(new Font("Consolas", Font.BOLD, 30));
-            g.drawString("Better luck next time...", 600, 500);
+            FontMetrics metrics = g.getFontMetrics();
+            // Texte
+            String text1 = "GAME OVER";
+            int width1 = metrics.stringWidth(text1);
+            // Position
+            int x1 = (getWidth() - width1) / 2; // horizontal mittig für Text 1
+            int y1 = (getHeight() / 2) - 50; // vertikal positionieren für Text 1
+            g.drawString(text1, x1, y1);
+            g.setFont(new Font("Consolas", Font.BOLD, 40));
+            metrics = g.getFontMetrics();
+            String text2 = "Mehr Glück beim nächsten mal :)";
+            int width2 = metrics.stringWidth(text2);
+            // Position
+            int x2 = (getWidth() - width2) / 2; // horizontal mittig für Text 2
+            int y2 = (getHeight() / 2) + 50; // vertikal positionieren für Text 2
+            g.drawString(text2, x2, y2);
+            //  g.setFont(new Font("Consolas", Font.BOLD, 80));
+            //  g.drawString("GAME OVER", 600, 400);                  OLD ONE
+            // g.setFont(new Font("Consolas", Font.BOLD, 30));
+            // g.drawString("Mehr Glück beim nächsten mal", 600, 500);
+
+            //GALGENMÄNCHEN gesicht
             g.setColor(Color.WHITE);
             g.fillOval(1385, 365, 5, 5);
             g.fillOval(1410, 365, 5, 5);
             g.drawArc(1385, 375, 30, 20, 0, 180);
             g.setFont(new Font("Consolas", Font.BOLD, 80));
-            g.setColor(Color.RED);
-            g.drawString("Hangman", 600, 100);
 
-// galgenmännchen nochmal in farbe als overlay das sichtbar da schwarz
+            // galgenmännchen nochmal in farbe als overlay das sichtbar da schwarz
             g.setColor(Color.WHITE);
             g.drawLine(1390, 340, 1400, 350);
             g.drawLine(1400, 340, 1400, 350);
@@ -107,16 +127,30 @@ class DrawPanel extends JPanel //definiert das Fenster
         if (state >= 13) {
             g2.drawLine(1200, 400, 1300, 300);
             setBackground(Color.WHITE);
-            g.setColor(Color.GREEN);
-            g.setFont(new Font("Consolas", Font.BOLD, 80));
-            g.drawString("Hangman", 650, 100);
-            g.drawString("Richtig Geraten", 300, 400);
-            g.setFont(new Font("Consolas", Font.BOLD, 30));
-            g.drawString("Du hast das Wort " + "Lösung" + " richtig geraten", 300, 500); //
             g.setColor(Color.BLACK);
             g.fillOval(1385, 365, 5, 5);
             g.fillOval(1410, 365, 5, 5);
             g.drawArc(1385, 375, 30, 20, 0, -180);
+
+            //eckdaten Zu GAME OVER SCREEN
+            g.setFont(new Font("Consolas", Font.BOLD, 80));
+            FontMetrics metrics = g.getFontMetrics();
+            // Texte
+            String text1 = "Richtig Geraten";
+            int width3 = metrics.stringWidth(text1);
+            // Position
+            int x3 = (getWidth() - width3) / 2; // horizontal mittig für Text 1
+            int y3 = (getHeight() / 2) - 50; // vertikal positionieren für Text 1
+            g.drawString(text1, x3, y3);
+            g.setFont(new Font("Consolas", Font.BOLD, 40));
+            metrics = g.getFontMetrics();
+            String text4 = "Das Wort ist"+ "Lösung";
+            int width4 = metrics.stringWidth(text4);
+            // Position
+            int x4 = (getWidth() - width4) / 2; // horizontal mittig für Text 2
+            int y4 = (getHeight() / 2) + 50; // vertikal positionieren für Text 2
+            g.drawString(text4, x4, y4);
+
 
 
         }
