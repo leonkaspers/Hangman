@@ -174,7 +174,7 @@ public class Hangman extends JFrame implements ActionListener {
                     break;
                 }
                 case 1: {
-                    errorMessage.setText("Das doch keine Eingabe du Vogel!!!!!!!!!");
+                    errorMessage.setText("Das doch keine Eingabe du Vogel!!!");
                     errorMessage.setVisible(true);
                     break;
                 }

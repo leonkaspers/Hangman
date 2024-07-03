@@ -22,12 +22,13 @@ class DrawPanel extends JPanel //definiert das Fenster
     {
         int state = gui.getState();
         setBackground(Color.WHITE);
-        g.setColor(new Color(0, 255, 0));
-        g.fillArc(990, 600, 420, 600, 5, 180); // Shifted to the right bottom
-
-        if (state <= 11) {
-            g.setFont(new Font("Consolas", Font.BOLD, 80));
-
+        if (state == 13) {
+            g.setColor(new Color(31, 186, 31));
+            g.fillArc(990, 600, 420, 600, 5, 180); // Shifted to the right bottom
+        }
+        if (state <= 11 && state >= 1) {
+            g.setColor(new Color(31, 186, 31));
+            g.fillArc(990, 600, 420, 600, 5, 180); // Shifted to the right bottom
         }
 
         Graphics2D g2 = (Graphics2D) g;
@@ -136,13 +137,14 @@ class DrawPanel extends JPanel //definiert das Fenster
             g.drawLine(1400, 320, 1450, 380);
             g.drawLine(1400, 400, 1350, 500);
             g.drawLine(1400, 400, 1450, 500);
-
+            g.setColor(new Color(73, 73, 73));
+            g.fillArc(990, 600, 420, 600, 5, 180);
 
         }
         if (state == 13) {
             g2.drawLine(1200, 300, 1300, 200);
             setBackground(Color.WHITE);
-            g.setColor(Color.GREEN);
+            g.setColor(new Color(31, 186, 31));
             g.setFont(new Font("Consolas", Font.BOLD, 50));
             g.drawString("Du hast richtig geraten",500,400 );
             g.setColor(Color.BLACK);
