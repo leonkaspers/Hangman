@@ -37,7 +37,7 @@ public class Hangman extends JFrame implements ActionListener {
     public Hangman() {
 
         //Creating the Frame
-        JFrame frame = new JFrame("Hangman");
+        JFrame frame = new JFrame("HangmanAI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1600, 900);
 
@@ -47,16 +47,13 @@ public class Hangman extends JFrame implements ActionListener {
 
         // Creating TOP Panel and Help Button
         JPanel header = new JPanel(new BorderLayout());
-        JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JLabel title = new JLabel("HangmanAI");
-        centerPanel.add(title);
+
 
         JPanel leftPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        help = new JButton("Help");
+        help = new JButton("Hilfe");
         leftPanel.add(help);
 
         header.add(leftPanel, BorderLayout.WEST);
-        header.add(centerPanel, BorderLayout.CENTER);
 
         // Restrict the size of the header panel
         header.setMaximumSize(new Dimension(1600, 40));
@@ -82,10 +79,10 @@ public class Hangman extends JFrame implements ActionListener {
 
         //Creating the panel at bottom and adding components
         panel = new JPanel();
-        JLabel enterTextLabel = new JLabel("Enter Text");
+        JLabel enterTextLabel = new JLabel("Text Eingeben");
         inputField = new JTextField(15);
         input = new JButton("Eingabe");
-        reset = new JButton("Reset");   // Als Resetbutton
+        reset = new JButton("Neues Spiel");   // Als Resetbutton
         panel.add(enterTextLabel);
         panel.add(inputField);
         panel.add(input);
@@ -187,7 +184,7 @@ public class Hangman extends JFrame implements ActionListener {
                     break;
                 }
                 case 3: {
-                    errorMessage.setText("Das hast du schonmal eingegeben du Spatzenhirn...");
+                    errorMessage.setText("Das hast du schonmal eingegeben du Banause");
                     errorMessage.setVisible(true);
                     break;
                 }
