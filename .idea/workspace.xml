@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="graphics work finally">
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="added errorMessage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Words.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hangman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +26,16 @@
         <option value="Leon Kaspers" />
       </list>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -41,34 +48,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.GameTest.executor": "Run",
-    "Application.HangmanGame.executor": "Run",
-    "Application.NewGui.executor": "Run",
-    "Application.RandomWord.executor": "Run",
-    "Application.RandomWordPrinter.executor": "Run",
-    "Application.StickFigureDrawing.executor": "Run",
-    "Application.TextFieldExample.executor": "Run",
-    "Application.gameStarten.executor": "Run",
-    "Application.temp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.GameTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Hangman.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HangmanGame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NewGui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RandomWord.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RandomWordPrinter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StickFigureDrawing.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TextFieldExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.gameStarten.executor&quot;: &quot;Run&quot;,
+    &quot;Application.temp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;add-error-messages&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/OneDrive - UT Cloud/B. Sc. Medieninformatik/2. Semester/Praktische Informatik 2/Task 8.1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\leonk\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="47833905-4794-4580-8429-d4b8fb466be7" reportId="Hangman/qodana/2024-07-02" />
+    </option>
+  </component>
   <component name="RunManager">
-    <configuration name="NewGui" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="NewGui" />
+    <configuration name="Hangman" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Hangman" />
       <module name="Hangman" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -170,11 +183,94 @@
       <option name="project" value="LOCAL" />
       <updated>1719949600920</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add comprehensive Javadoc comments to Game class and fixed wrong win state.">
+      <option name="closed" value="true" />
+      <created>1719954856780</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719954856780</updated>
+    </task>
+    <task id="LOCAL-00011" summary="cleaned the new gui class">
+      <option name="closed" value="true" />
+      <created>1719955678740</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955678740</updated>
+    </task>
+    <task id="LOCAL-00012" summary="renamed and deleted old files">
+      <option name="closed" value="true" />
+      <created>1719955822906</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955822906</updated>
+    </task>
+    <task id="LOCAL-00013" summary="renamed and deleted old files">
+      <option name="closed" value="true" />
+      <created>1719955835627</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955835627</updated>
+    </task>
+    <task id="LOCAL-00014" summary="made useless field static">
+      <option name="closed" value="true" />
+      <created>1719955980318</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955980318</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fixed intellij problems and accidently added a bug">
+      <option name="closed" value="true" />
+      <created>1719956271609</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1719956271609</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added active state">
+      <option name="closed" value="true" />
+      <created>1719956882919</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1719956882919</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added active state and fixed bug">
+      <option name="closed" value="true" />
+      <created>1719957440105</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1719957440105</updated>
+    </task>
+    <task id="LOCAL-00018" summary="further clean up">
+      <option name="closed" value="true" />
+      <created>1719957499417</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1719957499417</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added errorMessage">
+      <option name="closed" value="true" />
+      <created>1719958274849</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1719958274849</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -198,22 +294,15 @@
     <MESSAGE value="Starting to create Main Panel and finished Layout" />
     <MESSAGE value="Draw panal hinzugefügt :)" />
     <MESSAGE value="graphics work finally" />
-    <option name="LAST_COMMIT_MESSAGE" value="graphics work finally" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Game.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DrawPanel.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add comprehensive Javadoc comments to Game class and fixed wrong win state." />
+    <MESSAGE value="cleaned the new gui class" />
+    <MESSAGE value="renamed and deleted old files" />
+    <MESSAGE value="made useless field static" />
+    <MESSAGE value="fixed intellij problems and accidently added a bug" />
+    <MESSAGE value="added active state" />
+    <MESSAGE value="added active state and fixed bug" />
+    <MESSAGE value="further clean up" />
+    <MESSAGE value="added errorMessage" />
+    <option name="LAST_COMMIT_MESSAGE" value="added errorMessage" />
   </component>
 </project>

@@ -4,13 +4,9 @@ import java.awt.*;
 
 class DrawPanel extends JPanel //definiert das Fenster
 {
-    public void setGui(NewGui gui) {
-        this.gui = gui;
-    }
+    Hangman gui;
 
-    NewGui gui;
-
-    public DrawPanel(NewGui gui) {
+    public DrawPanel(Hangman gui) {
         super();
         this.gui = gui;
     }
