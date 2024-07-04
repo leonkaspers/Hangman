@@ -35,6 +35,7 @@ public class Game {
         this.wordLetters = this.word.toCharArray();
         this.currentLetters = new char[this.word.length()];
         generateNewOutputString();
+        removeWhitespace();
     }
 
     /**
@@ -47,6 +48,7 @@ public class Game {
         this.word = string;
         this.wordLetters = this.word.toCharArray();
         this.currentLetters = new char[this.word.length()];
+        removeWhitespace();
     }
 
 
@@ -216,6 +218,17 @@ public class Game {
     private void addToUsed(String string) {
         if (!this.used.contains(string)) {
             used.add(string);
+        }
+    }
+
+    /**
+     * removes whitespace from the game word
+     */
+    private void removeWhitespace() {
+        for (int i = 0; i < wordLetters.length; i++) {
+            if (wordLetters[i] == ' ') {
+                currentLetters[i] = ' ';
+            }
         }
     }
 
