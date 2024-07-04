@@ -178,6 +178,7 @@ public class Game {
         // checks for game over
         if (state == 12) {
             active = false;
+            this.currentLetters = this.wordLetters;
         }
     }
 

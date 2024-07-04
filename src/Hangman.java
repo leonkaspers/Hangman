@@ -39,7 +39,7 @@ public class Hangman extends JFrame implements ActionListener {
         //Creating the Frame
         JFrame frame = new JFrame("HangmanAI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1600, 900);
+        frame.setSize(1600, 1000);
 
         //creating Basic Layout
 
@@ -61,6 +61,7 @@ public class Hangman extends JFrame implements ActionListener {
         // Creating live Panel
         JPanel live = new JPanel();
         outputField = new JLabel();
+        outputField.setFont(new Font("Consolas", Font.BOLD, 60));
         live.add(outputField);
 
         //creating Draw Panel
@@ -163,7 +164,7 @@ public class Hangman extends JFrame implements ActionListener {
             }
             this.state = game.getState();
             output.append(game.getWord() + "\n");
-            inputField.setText(game.getWord());
+            //inputField.setText(game.getWord());
 
             // game is on the way, new input was send
         } else if (ae.getSource() == this.input && game != null) {
@@ -190,7 +191,7 @@ public class Hangman extends JFrame implements ActionListener {
                 }
             }
 
-            outputField.setText(game.getCurrentLetters());
+
             state = game.getState();
             inputField.setText("");
 
@@ -248,6 +249,10 @@ public class Hangman extends JFrame implements ActionListener {
     private void updateGUI() {
         if (!(this.game == null)) {
             usedLetter.setText(this.game.getUsedOutputString());
+            outputField.setText(game.getCurrentLetters());
+        } else {
+            usedLetter.setText("");
+            outputField.setText(" ");
         }
 
         graphic.repaint();
@@ -258,11 +263,14 @@ public class Hangman extends JFrame implements ActionListener {
                 input.setVisible(true);
                 input.setText("Spiel Starten");
                 errorMessage.setVisible(false);
+
+                inputField.setFont(new Font("Wingdings", Font.PLAIN, 20));
                 break;
             }
             case 1: {
                 output.append("Noch 10 Versuche\n");
                 input.setText("Eingabe");
+                inputField.setFont(new Font("Consolas", Font.PLAIN, 20));
                 break;
             }
             case 2: {
