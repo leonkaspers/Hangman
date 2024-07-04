@@ -69,7 +69,7 @@ public class Hangman extends JFrame implements ActionListener {
 
         // Creating usedPanel
         JPanel usedPanel = new JPanel();
-        JLabel usedLettersText = new JLabel("Benutze Buchstaben:");
+        JLabel usedLettersText = new JLabel("Benutzte Buchstaben:");
         usedLetter = new JLabel();
         errorMessage = new JLabel();
         errorMessage.setVisible(false);
@@ -185,7 +185,7 @@ public class Hangman extends JFrame implements ActionListener {
                     break;
                 }
                 case 3: {
-                    errorMessage.setText("Das hast du schonmal eingegeben du Banause");
+                    errorMessage.setText("Das hast du schonmal eingegeben, du Banause");
                     errorMessage.setVisible(true);
                     break;
                 }
@@ -209,26 +209,26 @@ public class Hangman extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, """
                     Willkommen in der HamgmanAi Hilfezentrale
 
-                    Hier die Spielregeln:
+                    Hier sind die Spielregeln:
 
                     Spielablauf:
 
                     Buchstaben raten:
-                    Der Spieler, also DU, rät eine Reihe an Buchstaben um ein Verdecktes Wort zu erraten.
-                    Die Rateversuche sind begrenzt. Die eingabe erfolgt über Button on screen oder Enter
+                    Der Spieler, also DU, rät eine Reihe an Buchstaben um ein verdecktes Wort zu erraten.
+                    Die Rateversuche sind begrenzt. Die Eingabe erfolgt über den linken Button oder Enter.
 
-                    Richtiger Buchstaben:\s
+                    Richtiger Buchstabe:\s
                     Wenn ein geratener Buchstabe im Wort vorkommt, schreibt das Spiel
                     diesen Buchstaben an die entsprechenden Stellen, die durch die Striche markiert sind.
 
                     Falsche Buchstaben:\s
                     Wird ein falscher Buchstabe genannt, der nicht im Wort vorkommt,
-                    wird vom Spiel einen Teil zum Galgenmännchen hinzugefügt.
-                    Dies wie Folgt, Galgen, Strick, Kopf und Körper des Galgenmännchens, das Maximum
-                    an Fehlversuchen ist erreicht, wenn das Männchen „gehängt“ ist.
+                    wird vom Spiel einen Teil zum Galgenmännchen hinzugefügt,
+                    und zwar in der folgenden Reihenfolge: Galgen, Strick, Kopf und Körper des Galgenmännchens.
+                    Das Maximum an Fehlversuchen ist erreicht, wenn das Männchen „gehängt“ ist.
 
                     Gewinn:\s
-                    Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde\s
+                    Der ratende Spieler gewinnt das Spiel, wenn das Wort erraten wurde,\s
                     bevor das Galgenmännchen komplett gezeichnet ist.
 
                     Niederlage:\s

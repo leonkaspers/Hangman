@@ -49,8 +49,8 @@ class DrawPanel extends JPanel //definiert das Fenster
         {g.setColor(Color.BLACK);
             g.setFont(new Font("Consolas", Font.BOLD, 30));
             g.drawString("Willkommen\n", 100, 230);
-            g.drawString("Drücke auf Spiel Starten, um das Spiel als Einzelspieler zu starten",100,300  );
-            g.drawString("Gebe ein Wort ein, um mit diesem das Spiel als Zweispieler zu starten", 100, 340);
+            g.drawString("Drücke auf \"Spiel Starten\", um das Spiel mit einem zufälligen Wort zu starten.",100,300  );
+            g.drawString("Gebe ein Wort ein und drücke \"Spiel Starten\", um mit diesem das Spiel zu spielen.", 100, 340);
             g.setColor(Color.BLACK);
             g.setFont(new Font("Consolas", Font.BOLD, 15));
             g.drawString("Unter Hilfe findest du die Regeln :)", 100, 380);
@@ -116,7 +116,7 @@ class DrawPanel extends JPanel //definiert das Fenster
             g.drawString(text1, x1, y1);
             g.setFont(new Font("Consolas", Font.BOLD, 40));
             metrics = g.getFontMetrics();
-            String text2 = "Mehr Glück beim nächsten mal :)";
+            String text2 = "Mehr Glück beim nächsten Mal :)";
             int width2 = metrics.stringWidth(text2);
             // Position
             int x2 = (getWidth() - width2) / 2; // horizontal mittig für Text 2
