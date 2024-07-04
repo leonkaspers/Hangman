@@ -79,9 +79,11 @@ class DrawPanel extends JPanel //definiert das Fenster
             g.drawOval(1375, 250, 50, 50);
 
         }
+        //"körper"
         if (state >= 7) {
             g.drawLine(1400, 300, 1400, 400);
         }
+        //arme
         if (state >= 8) {
             g.drawLine(1400, 320, 1350, 380); //y1 begin arm y2 ende arm
         }
@@ -120,6 +122,7 @@ class DrawPanel extends JPanel //definiert das Fenster
             int x2 = (getWidth() - width2) / 2; // horizontal mittig für Text 2
             int y2 = (getHeight() / 2) + 50; // vertikal positionieren für Text 2
             g.drawString(text2, x2, y2);
+
             //  g.setFont(new Font("Consolas", Font.BOLD, 80));
             //  g.drawString("GAME OVER", 600, 400);                  OLD ONE
             // g.setFont(new Font("Consolas", Font.BOLD, 30));
