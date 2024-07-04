@@ -74,7 +74,7 @@ class DrawPanel extends JPanel //definiert das Fenster
             g2.setStroke(new BasicStroke(2));
             g2.drawLine(1400, 200, 1400, 250);
         }
-
+        g2.setColor(new Color(0, 0, 0));
         if (state >= 6) {
             g.drawOval(1375, 250, 50, 50);
 
