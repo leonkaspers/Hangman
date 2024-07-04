@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="fixed bug">
+    <list default="true" id="404c39d3-c413-4b3c-aebe-1a9409c462e4" name="Changes" comment="fixed all bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hangman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Words.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Words.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +110,8 @@
       <workItem from="1719930657721" duration="663000" />
       <workItem from="1719947837556" duration="569000" />
       <workItem from="1720014788627" duration="2682000" />
-      <workItem from="1720017650992" duration="314000" />
+      <workItem from="1720017650992" duration="524000" />
+      <workItem from="1720030247987" duration="630000" />
     </task>
     <task id="LOCAL-00001" summary="Added tryInput, tryLetter, and correctLetter methods">
       <option name="closed" value="true" />
@@ -267,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719958274849</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fixed all bugs">
+      <option name="closed" value="true" />
+      <created>1720018165247</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1720018165247</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +313,7 @@
     <MESSAGE value="added active state and fixed bug" />
     <MESSAGE value="further clean up" />
     <MESSAGE value="added errorMessage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added errorMessage" />
+    <MESSAGE value="fixed all bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed all bugs" />
   </component>
 </project>
