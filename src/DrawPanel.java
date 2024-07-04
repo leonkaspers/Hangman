@@ -1,14 +1,22 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Random;
 
 
 class DrawPanel extends JPanel //definiert das Fenster
 {
     Hangman gui;
 
+
     public DrawPanel(Hangman gui) {
         super();
         this.gui = gui;
+
+
+
     }
 
     @Override
@@ -139,6 +147,7 @@ class DrawPanel extends JPanel //definiert das Fenster
             g.drawLine(1400, 400, 1450, 500);
             g.setColor(new Color(73, 73, 73));
             g.fillArc(990, 600, 420, 600, 5, 180);
+
 
         }
         if (state == 13) {
