@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Words {
+    // generiert mit ChatGPT
     private static final String[] hangmanWords = {
             "Bernhard Pörksen",
             "Hangman",
