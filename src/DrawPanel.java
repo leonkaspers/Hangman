@@ -32,11 +32,11 @@ class DrawPanel extends JPanel //definiert das Fenster
         setBackground(Color.WHITE);
         if (state == 13) {
             g.setColor(new Color(31, 186, 31));
-            g.fillArc(990, 600, 420, 600, 5, 180); // Shifted to the right bottom
+            g.fillArc(940, 600, 420, 600, 5, 180); // Shifted to the right bottom
         }
         if (state <= 11 && state >= 1) {
             g.setColor(new Color(31, 186, 31));
-            g.fillArc(990, 600, 420, 600, 5, 180); // Shifted to the right bottom
+            g.fillArc(940, 600, 420, 600, 5, 180); // Shifted to the right bottom
         }
 
         Graphics2D g2 = (Graphics2D) g;
@@ -59,44 +59,44 @@ class DrawPanel extends JPanel //definiert das Fenster
 
         }
         if (state >= 2) {
-            g2.drawLine(1200, 600, 1200, 200);
+            g2.drawLine(1150, 600, 1150, 200);
         }
         if (state >= 3) {
-            g2.drawLine(1200, 200, 1400, 200);
-            g2.drawLine(1200, 600, 1200, 200);
+            g2.drawLine(1150, 200, 1350, 200);
+            g2.drawLine(1150, 600, 1150, 200);
         }
         if (state >= 4) {
-            g2.drawLine(1200, 300, 1300, 200);
+            g2.drawLine(1150, 300, 1250, 200);
         }
         // Seil
         if (state >= 5) {
 
             g2.setStroke(new BasicStroke(2));
-            g2.drawLine(1400, 200, 1400, 250);
+            g2.drawLine(1350, 200, 1350, 250);
         }
         g2.setColor(new Color(0, 0, 0));
         if (state >= 6) {
-            g.drawOval(1375, 250, 50, 50);
+            g.drawOval(1325, 250, 50, 50);
 
         }
         //"körper"
         if (state >= 7) {
-            g.drawLine(1400, 300, 1400, 400);
+            g.drawLine(1350, 300, 1350, 400);
         }
         //arme
         if (state >= 8) {
-            g.drawLine(1400, 320, 1350, 380); //y1 begin arm y2 ende arm
+            g.drawLine(1350, 320, 1300, 380); //y1 begin arm y2 ende arm
         }
         if (state >= 9) {
-            g.drawLine(1400, 320, 1450, 380);
+            g.drawLine(1350, 320, 1400, 380);
         }
         if (state >= 10) {
             // Draw left leg
-            g.drawLine(1400, 400, 1350, 500);
+            g.drawLine(1350, 400, 1300, 500);
         }
         if (state >= 11) {
             // Draw right leg
-            g.drawLine(1400, 400, 1450, 500);
+            g.drawLine(1350, 400, 1400, 500);
         }
         if (state == 12) {
 
@@ -130,39 +130,46 @@ class DrawPanel extends JPanel //definiert das Fenster
 
             //GALGENMÄNCHEN gesicht
             g.setColor(Color.WHITE);
-            g.fillOval(1385, 265, 5, 5);
-            g.fillOval(1410, 265, 5, 5);
-            g.drawArc(1385, 275, 30, 20, 0, 180);
+            g.fillOval(1335, 265, 5, 5);
+            g.fillOval(1360, 265, 5, 5);
+            g.drawArc(1335, 275, 30, 20, 0, 180);
             g.setFont(new Font("Consolas", Font.BOLD, 80));
 
             // galgenmännchen nochmal in farbe als overlay das sichtbar da schwarz
             g.setColor(Color.WHITE);
-            g.drawLine(1390, 240, 1400, 250);
-            g.drawLine(1400, 240, 1400, 250);
-            g.drawLine(1410, 240, 1400, 250);
+            g.drawLine(1340, 240, 1350, 250);
+            g.drawLine(1350, 240, 1350, 250);
+            g.drawLine(1360, 240, 1350, 250);
 
             //Galgenmenchen
-            g.drawOval(1375, 250, 50, 50);
-            g.drawLine(1400, 300, 1400, 400);
-            g.drawLine(1400, 320, 1350, 380);
-            g.drawLine(1400, 320, 1450, 380);
-            g.drawLine(1400, 400, 1350, 500);
-            g.drawLine(1400, 400, 1450, 500);
+            g.drawOval(1325, 250, 50, 50);
+            g.drawLine(1350, 300, 1350, 400);
+            g.drawLine(1350, 320, 1300, 380);
+            g.drawLine(1350, 320, 1400, 380);
+            g.drawLine(1350, 400, 1300, 500);
+            g.drawLine(1350, 400, 1400, 500);
             g.setColor(new Color(73, 73, 73));
-            g.fillArc(990, 600, 420, 600, 5, 180);
+            g.fillArc(940, 600, 420, 600, 5, 180);
 
 
         }
         if (state == 13) {
-            g2.drawLine(1200, 300, 1300, 200);
+            g2.drawLine(1150, 300, 1250, 200);
             setBackground(Color.WHITE);
             g.setColor(new Color(31, 186, 31));
+
+            String text3 = "Du hast richtig geraten";
             g.setFont(new Font("Consolas", Font.BOLD, 50));
-            g.drawString("Du hast richtig geraten",500,400 );
+            FontMetrics metrics = g.getFontMetrics();
+            int width3 = metrics.stringWidth(text3);
+            int x3 = (getWidth() - width3) / 2; // Horizontal mittig
+            int y3 = getHeight() / 2; // Vertikal positionieren
+            g.drawString(text3, x3, y3);
+
             g.setColor(Color.BLACK);
-            g.fillOval(1385, 265, 5, 5);
-            g.fillOval(1410, 265, 5, 5);
-            g.drawArc(1385, 275, 30, 20, 0, -180);
+            g.fillOval(1335, 265, 5, 5);
+            g.fillOval(1360, 265, 5, 5);
+            g.drawArc(1335, 275, 30, 20, 0, -180);
 
 
 
