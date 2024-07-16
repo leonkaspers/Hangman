@@ -116,7 +116,7 @@ class DrawPanel extends JPanel //definiert das Fenster
             g.drawString(text1, x1, y1);
             g.setFont(new Font("Consolas", Font.BOLD, 40));
             metrics = g.getFontMetrics();
-            String text2 = "Mehr Glück beim nächsten Mal :)";
+            String text2 = "Mehr Glück beim nächsten Mal";
             int width2 = metrics.stringWidth(text2);
             // Position
             int x2 = (getWidth() - width2) / 2; // horizontal mittig für Text 2
