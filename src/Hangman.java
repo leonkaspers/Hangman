@@ -61,7 +61,7 @@ public class Hangman extends JFrame implements ActionListener {
         // Creating live Panel
         JPanel live = new JPanel();
         outputField = new JLabel();
-        outputField.setFont(new Font("Consolas", Font.BOLD, 60));
+        outputField.setFont(new Font("Calibri", Font.BOLD, 60));
         live.add(outputField);
 
         //creating Draw Panel

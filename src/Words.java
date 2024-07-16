@@ -859,7 +859,6 @@ public class Words {
             "Nebel",
             "Neffe",
             "Negligé",
-            "Neger",
             "Nektar",
             "Neid",
             "Neid",
