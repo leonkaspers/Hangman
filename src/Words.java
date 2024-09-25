@@ -869,7 +869,6 @@ public class Words {
             "Neujahr",
             "Neuner",
             "Nichts",
-            "Niere",
             "Nimbus",
             "Nippel",
             "Nocke",

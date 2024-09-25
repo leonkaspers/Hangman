@@ -323,5 +323,6 @@ public class Hangman extends JFrame implements ActionListener {
     }
 
 
+
 }
 
